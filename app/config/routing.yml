@@ -1,0 +1,4 @@
+nextmoovment_reference:
+    resource: "@NextmoovmentReferenceBundle/Resources/config/routing.yml"
+    prefix:   /
+
