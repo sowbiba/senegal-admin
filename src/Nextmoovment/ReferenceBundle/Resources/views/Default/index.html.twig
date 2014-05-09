@@ -1,4 +1,24 @@
 {% extends "base.html.twig" %}
+{# On replace le titre #}
+{% block title %}{{ parent() }} - Références{% endblock title %}
+
+{# On remplace le bloc body #}
 {% block body %}
-    Hello {{ name }}!
+    <p>Hello {{ name }}!</p>
+    
+    <p>
+        <a href="#" class="btn"><i class="glyphicon glyphicon-trash"></i>Supprimer l'article</a>
+    </p>
+    <p class="bg-warning" style="padding:15px">test</p>
+    <p class="bg-danger" style="padding:15px">test</p>
+    <p class="bg-info" style="padding:15px">test</p>
+    <p class="bg-primary" style="padding:15px">test</p>
+    <p class="bg-success" style="padding:15px">test</p>
+    
 {% endblock body %}
+
+{# On remplace le bloc menu #}
+{% block bundle_menu %}
+    {{ render(controller("NextmoovmentReferenceBundle:Reference:menu", {'nombre': 3})) }}
+{% endblock bundle_menu %}
+

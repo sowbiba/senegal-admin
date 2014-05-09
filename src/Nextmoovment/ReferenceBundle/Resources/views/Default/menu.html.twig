@@ -1,0 +1,9 @@
+{# src/Nextmoovment/ReferenceBundle/Resources/views/Blog/menu.html.twig #}
+
+<ul>
+    <ul class="nav nav-pills nav-stacked">
+        {% for article in liste_articles %}
+            <li><a href="{{ path('nextmoovment_reference_voir', {'id': article.id}) }}">{{ article.titre }}</a></li>
+        {% endfor %}
+    </ul>
+</ul>

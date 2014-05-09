@@ -1,3 +1,7 @@
 nextmoovment_reference_homepage:
     pattern:  /hello/{name}
-    defaults: { _controller: NextmoovmentReferenceBundle:Default:index }
+    defaults: { _controller: NextmoovmentReferenceBundle:Reference:index }
+    
+nextmoovment_reference_voir:
+    pattern:  /reference/{id}
+    defaults: { _controller: NextmoovmentReferenceBundle:Reference:index }
