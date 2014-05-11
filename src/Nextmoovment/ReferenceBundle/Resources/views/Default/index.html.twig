@@ -1,6 +1,26 @@
 {% extends "base.html.twig" %}
-{# On replace le titre #}
+
+{# Les styles #}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/style_index.css') }}" type="text/css" />
+{% endblock stylesheets %}
+
+
+
+{# On remplace le titre #}
 {% block title %}{{ parent() }} - Références{% endblock title %}
+
+
+{# On remplace le header #}
+{% block header %}
+    {% include 'NextmoovmentReferenceBundle:Reference:menu.html.twig'%}
+{% endblock header %}
+
+
+{% block menu %}
+    {{ render(controller("NextmoovmentReferenceBundle:Reference:menu", {'nombre': 3})) }}
+{% endblock menu %}
 
 {# On remplace le bloc body #}
 {% block body %}
@@ -17,8 +37,12 @@
     
 {% endblock body %}
 
-{# On remplace le bloc menu #}
-{% block bundle_menu %}
-    {{ render(controller("NextmoovmentReferenceBundle:Reference:menu", {'nombre': 3})) }}
-{% endblock bundle_menu %}
+{# On remplace le bloc footer #}
+{% block footer %}
+    {{ parent() }}
+{% endblock footer %}
 
+{# On remplace le bloc JS #}
+{% block javascripts %}
+    {{ parent() }}
+{% endblock javascripts %}

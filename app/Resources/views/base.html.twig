@@ -10,31 +10,36 @@
     </head>
     <body>
         <div class="container">
-            <div id="header" class="hero-unit">
-                <h1>Mon Projet Symfony2</h1>
-                <p>Ce projet est propulsé par Symfony2, et construit grâce au tutoriel du siteduzero.</p>
-                <p><a class="btn btn-primary btn-large"
-                      href="http://www.siteduzero.com/informatique/tutoriels/developpez-votre-site-web-avec-le-framework-symfony2">Lire le tutoriel</a>
-                </p>
+            <div id="header" class="hero-unit left">
+                {% block header %}
+                    <h1>Mon Projet Symfony2</h1>
+                    <p>Ce projet est propulsé par Symfony2, et construit grâce au tutoriel du siteduzero.</p>
+                    <p><a class="btn btn-primary btn-large"
+                          href="http://www.siteduzero.com/informatique/tutoriels/developpez-votre-site-web-avec-le-framework-symfony2">Lire le tutoriel</a>
+                    </p>
+                {% endblock header %}
             </div>
             <div class="row">
                 <div id="menu" class="span3">
-                    <h3>Le blog</h3>
-                    <ul class="nav nav-pills nav-stacked">
-                        <li><a href="#">Accueil du blog</a></li>
-                        <li><a href="#">Ajouter un article</a></li>
-                    </ul>
+                    {% block menu %}
+                        <h3>Le blog</h3>
+                        <ul class="nav nav-pills nav-stacked">
+                            <li><a href="#">Accueil du blog</a></li>
+                            <li><a href="#">Ajouter un article</a></li>
+                        </ul>
 
-                    {% block bundle_menu %}{% endblock bundle_menu %}
+                    {% endblock menu %}
                 </div>
                 <div id="content" class="span9">
                     {% block body %}
-                    {% endblock %}
+                    {% endblock body %}
                 </div>
             </div>
             <hr>
             <footer>
-                <p>The sky's the limit © 2012 and beyond.</p>
+                {% block footer %}
+                    <p>The sky's the limit © 2012 and beyond.</p>
+                {% endblock footer %}
             </footer>
         </div>
         {% block javascripts %}
@@ -42,22 +47,6 @@
             fonctionnalités du bootstrap Twitter #}
             <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
             <script type="text/javascript" src="{{ asset('js/bootstrap.js') }}"></script>
-        {% endblock %}
+        {% endblock javascripts %}
     </body>
 </html>
-
-
-{#<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
-</html>
-#}
