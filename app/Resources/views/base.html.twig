@@ -6,19 +6,42 @@
         <title>{% block title %}Nextmoovment{% endblock %}</title>
         {% block stylesheets %}
             <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}" type="text/css" />
+            <link rel="stylesheet" href="{{ asset('css/style.css') }}" type="text/css" />
+            <link rel="stylesheet" href="{{ asset('css/style_menu.css') }}" type="text/css" />
         {% endblock %}
     </head>
     <body>
         <div class="container">
-            <div id="header" class="hero-unit left">
+            <header>
                 {% block header %}
-                    <h1>Mon Projet Symfony2</h1>
-                    <p>Ce projet est propulsé par Symfony2, et construit grâce au tutoriel du siteduzero.</p>
-                    <p><a class="btn btn-primary btn-large"
-                          href="http://www.siteduzero.com/informatique/tutoriels/developpez-votre-site-web-avec-le-framework-symfony2">Lire le tutoriel</a>
-                    </p>
+                    <div id="logo">
+                        <center>
+                            <a href="index.php">
+                                <img src="{{ asset('images/home/logo.jpg') }}" alt="Nextmoovment" title="Nextmoovment">
+                            </a>
+                        </center>
+                    </div>
+                    <div id="recherche_titre">
+                        <div id="formulaire_recherche">
+                            <form method="POST" action="search.php">
+                                <div id="champ_recherche">
+                                    <input name="search" value="Artistes, Albums, Vidéos ..." title="Rechercher dans les Artistes, Albums, Vidéos ..." onfocus="this.value = ''" type="text">
+                                </div>
+                                <div id="btn_recherche">
+                                    <input src="{{ asset('images/home/loupe.jpg') }}" value="submit" type="image">
+                                </div>
+                            </form>
+                        </div> <!-- Fin formulaire -->
+                    </div>
+                    <div id="liens">
+                        <span id="titre_liens">REJOIGNEZ   NEXTMOOVMENT</span>
+                        <span class="header_link" id="rss_link"><a href="http://www.nextmoovment.com/flux_nextmoovment.xml" target="_blank"></a></span>
+                        <span class="header_link" id="facebook_link"><a href="http://www.facebook.com/pages/Next-Moovment/153954004620103?ref=hl" target="_blank"></a></span>
+                        <span class="header_link" id="twitter_link"><a href="https://twitter.com/nextmoovment" target="_blank"></a></span>
+                        <span class="header_link" id="youtube_link"><a href="http://www.youtube.com/user/NEXTMOOVMENTOFFICIEL?feature=CAQQwRs%3D" target="_blank"></a></span>
+                    </div>
                 {% endblock header %}
-            </div>
+            </header>
             <div class="row">
                 <div id="menu" class="span3">
                     {% block menu %}
@@ -27,7 +50,6 @@
                             <li><a href="#">Accueil du blog</a></li>
                             <li><a href="#">Ajouter un article</a></li>
                         </ul>
-
                     {% endblock menu %}
                 </div>
                 <div id="content" class="span9">

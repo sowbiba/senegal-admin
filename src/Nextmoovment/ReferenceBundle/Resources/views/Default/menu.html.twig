@@ -1,9 +1,25 @@
 {# src/Nextmoovment/ReferenceBundle/Resources/views/Blog/menu.html.twig #}
 
-<ul>
-    <ul class="nav nav-pills nav-stacked">
-        {% for article in liste_articles %}
-            <li><a href="{{ path('nextmoovment_reference_voir', {'id': article.id}) }}">{{ article.titre }}</a></li>
-        {% endfor %}
-    </ul>
+<ul class="nav nav-pills nav-stacked">
+    <li id="li_menu_home" class="{% if menu_actif == 1 %} li_menu_actif {% endif %}"><a href="index.php" title="Nextmoovment - NEXTMOOVMENT"><span><center>NEXTMOOVMENT</center></span></a></li>
+    <li id="li_menu_references" class="{% if menu_actif == 2 %} li_menu_actif {% endif %}"><a href="references.php" title="Nextmoovment - REFERENCES"><span><center>REFERENCES</center></span></a></li>
+    <li id="li_menu_magazine" class="{% if menu_actif == 3 %} li_menu_actif {% endif %}"><a href="javascript:void(0);" title="Nextmoovment - LE MAGAZINE"><span><center>LE MAGAZINE</center></span></a></li>
+    <li id="li_menu_contact" class="{% if menu_actif == 4 %} li_menu_actif {% endif %}"><a href="contact.php" title="Nextmoovment - CONTACT"><span><center>CONTACT</center></span></a></li>
 </ul>
+
+<div class="zone_fleche_menu">
+
+    <!-- home --><div class="fleche_menu" style="margin-left:110px;" {% if menu_actif == 1 %} id="fleche_menu_actif" {% endif %}></div>
+
+    <!-- references --><div class="fleche_menu" style="margin-left:350px;" {% if menu_actif == 2 %} id="fleche_menu_actif" {% endif %}></div>
+
+    <!-- magazine --><div class="fleche_menu" style="margin-left:545px;" {% if menu_actif == 3 %} id="fleche_menu_actif" {% endif %}></div>
+
+    <!-- contact --><div class="fleche_menu" style="margin-left:794px;" {% if menu_actif == 4 %} id="fleche_menu_actif" {% endif %}></div>
+</div>
+
+<div class="sous_menu_flottant">
+    <div class="un_sous_menu"><a href="actus_news.php" title="Nextmoovment - ACTUS/NEWS"><span><center>ACTUS/NEWS</center></span></a></div>
+    <div class="un_sous_menu"><a href="chroniques.php" title="Nextmoovment - CHRONIQUES"><span><center>CHRONIQUES ALBUMS/LIVRES</center></span></a></div>
+    <div class="un_sous_menu"><a href="interview.php" title="Nextmoovment - INTERVIEWS"><span><center>INTERVIEWS</center></span></a></div>
+</div>

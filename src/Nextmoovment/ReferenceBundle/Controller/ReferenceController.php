@@ -11,13 +11,8 @@ class ReferenceController extends Controller {
     }
 
     public function menuAction() {
-        $liste = array(
-            array('id' => 2, 'titre' => 'Mon dernier weekend !'),
-            array('id' => 5, 'titre' => 'Sortie de Symfony2.1'),
-            array('id' => 9, 'titre' => 'Petit test')
-        );
         return $this->render('NextmoovmentReferenceBundle:Default:menu.html.twig', array(
-                    'liste_articles' => $liste
+                    'menu_actif' => 1
         ));
     }
 

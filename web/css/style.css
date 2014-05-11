@@ -1,0 +1,140 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 11 mai 2014, 14:42:12
+    Author     : isow
+*/
+*
+{
+    /*font-weight: normal;
+    font-style: normal;*/
+}
+
+html {overflow: auto;}
+
+body {
+    background-image:url(../images/background_gris.jpg);
+    background-repeat:repeat;
+    /*font-weight: 100;*/
+    font-family:Trebuchet,Trebuchet MS,arial,Verdana,Times;
+    font-size:9pt;
+    /*color:#9C9F9F;*/
+    /*margin-left:auto;*/
+    margin:0;
+    padding:0;
+
+}
+
+.container {
+    z-index:1;
+    background-color:white;
+    width: 1007px;
+    /*    overflow:hidden;*/
+}
+
+header {
+    height: 225px;
+}
+
+#logo {
+    position: relative;
+    float: left;
+    width: 275px;
+    height: 190px;
+}
+
+#recherche_titre {
+    position: relative;
+    float: left;
+    width: 185px;
+    height: 25px;
+    margin-top: 72px;
+    margin-left: 125px;
+}
+
+#liens {
+    position: relative;
+    float: right;
+    width: 295px;
+    height: 95px;
+    margin-right: 10px;
+    margin-top: 3px;
+}
+
+#titre_liens {
+    position: relative;
+    float: left;
+    width: 262px;
+    height: 22px;
+    font-family: "Arial Black",Arial,Trebuchet;
+    font-size: 14px;
+    font-weight: bold;
+    padding-bottom: 4px;
+    letter-spacing: 0.5pt;
+    border-bottom: 3px solid #DD1C24;
+}
+
+.header_link {
+    margin-left: 10px;
+    margin-top: 10px;
+    position: relative;
+    float: left;
+}
+
+
+#rss_link {
+    margin-left: 0px;
+}
+
+#rss_link  a{
+    display:block;
+    height:60px;
+    width:60px;
+    background:url("../images/rss_feed.png") no-repeat;
+}
+#rss_link  a:hover{
+    background:url("../images/rss_feed_2.png") no-repeat;
+}
+
+
+
+#facebook_link  a{
+    display:block;
+    height:60px;
+    width:57px;
+    background:url("../images/social_icons.gif") repeat;
+}
+#facebook_link  a:hover{
+    background:url("../images/social_icons.gif") repeat;
+    background-position:0 -60px;
+}
+
+
+#twitter_link  a{
+    display:block;
+    height:60px;
+    width:57px;
+    background:url("../images/social_icons.gif") repeat;
+    background-position:-57px 0;
+}
+#twitter_link  a:hover{
+    background:url("../images/social_icons.gif") repeat;
+    background-position:-57px -60px;
+}
+
+
+
+#youtube_link  a{
+    display:block;
+    height:60px;
+    width:57px;
+    background:url("../images/social_icons.gif") repeat;
+    background-position:-171px 0;
+}
+#youtube_link  a:hover{
+    background:url("../images/social_icons.gif") repeat;
+    background-position:-171px -60px;
+}

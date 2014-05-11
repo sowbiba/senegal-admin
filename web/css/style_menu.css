@@ -1,0 +1,178 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 11 mai 2014, 16:40:58
+    Author     : isow
+*/
+#menu {
+/*    position: relative;
+    float: left;*/
+    height: 57px;
+    width: 935px;
+    margin-left: 5px;
+}
+
+#menu ul {
+    position: relative;
+    float: left;
+    height: 37px;
+    width: 100%;
+    display: inline;
+    padding: 0px;
+    margin: 0px;
+    list-style-type: none;
+}
+
+#menu ul li {
+    position: relative;
+    float: left;
+    height: 100%;
+    background: none repeat scroll 0% 0% #BE0B1D;
+    color: #FFF;
+    font-size: 12px;
+    font-weight: bold;
+    font-family: Trebuchet,Trebuchet MS,arial,Verdana,Times;
+    letter-spacing: 0.8pt;
+}
+
+
+#menu ul li a,a:hover{
+    height:100%;
+    width:100%;
+    display:block;
+    color:inherit;
+    background: inherit;
+    text-decoration:none;
+}
+
+#menu ul li span {
+    position:relative;
+    float:left;
+    width:100%;
+/*    margin-top:10px;*/
+}
+
+#li_menu_home {
+    width:250px;
+}
+
+#li_menu_edito {
+    width:70px;
+    margin-left:2px;
+}
+
+#li_menu_news {
+    width:140px; /*ex = 157px*/
+    margin-left:2px;
+}
+
+#li_menu_chroniques {
+    width:245px; /*ex = 260px*/
+    margin-left:2px;
+}
+
+#li_menu_tv {
+    width:176px; /*ex = 186px*/
+    margin-left:2px;
+}
+
+#li_menu_sports {
+    width:80px;
+    margin-left:2px;
+}
+
+#li_menu_interviews {
+    width:125px; /*ex = 135px*/
+    margin-left:2px;
+}
+
+#li_menu_bons_plans {
+    width:110px; /*ex = 130px*/
+    margin-left:2px;
+}
+
+
+
+#li_menu_contact {
+    width:199px; /*ex = 125px*/
+    margin-left:2px;
+}
+
+
+
+
+#li_menu_references {
+    width:240px; /*ex = 140px*/
+    margin-left:2px;
+}
+
+#li_menu_magazine {
+    width:240px; /*ex = 245px*/
+    margin-left:2px;
+}
+
+
+.sous_menu_flottant {
+    position: relative;
+    float: left;
+    height: 100px;
+    width: 240px;
+    background: white;
+    margin-left: 494px;
+    z-index: 99;
+    margin-top: -9px;
+    display: none;
+}
+.un_sous_menu {
+    position: relative;
+    float: left;
+    height: 32px;
+    width: 100%;
+    margin-top: 2px;
+    background: #BE0B1D;
+    
+    color:white;
+    /*text-shadow:-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;*/
+    font-size:12px;
+    font-weight:bold;
+    font-family:Trebuchet,Trebuchet MS,arial,Verdana,Times;
+    letter-spacing:0.8pt;
+}
+
+.un_sous_menu a{
+    height:100%;
+    width:100%;
+    display:block;
+    color:inherit;
+    text-decoration:none;
+}
+
+.un_sous_menu span {
+    position:relative;
+    float:left;
+    width:100%;
+    margin-top:10px;
+}
+
+.zone_fleche_menu {
+    position:relative;
+    float:left;
+    width:100%; /*ex = 956px*/
+    height:10px;
+}
+
+.fleche_menu {
+    position:relative;
+    float:left;
+    height:100%;
+    width:22px;
+    background:url(../_images/fleche_menu.jpg) no-repeat;
+    display:none;
+}
+
+#fleche_menu_actif {
+    display:block;
+}
