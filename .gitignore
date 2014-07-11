@@ -10,5 +10,5 @@
 /bin/
 /composer.phar
 /nbproject/private/
-/nbproject
-*.gitignore
+*/nbproject*
+*.git*
