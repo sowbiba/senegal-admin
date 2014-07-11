@@ -1,0 +1,7 @@
+test_my_test_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: TestMyTestBundle:Default:index }
+    
+test_my_test_testlaravel:
+    pattern:  /laravel
+    defaults: { _controller: TestMyTestBundle:Default:laravel }

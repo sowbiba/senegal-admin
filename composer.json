@@ -4,7 +4,10 @@
     "type": "project",
     "description": "The \"Symfony Standard Edition\" distribution",
     "autoload": {
-        "psr-0": { "": "src/" }
+        "psr-0": { 
+            "": "src/",
+            "TestMyTestBundle" : "Maatwebsite/Excel/Facades/Excel"
+            }
     },
     "require": {
         "php": ">=5.3.3",
@@ -21,7 +24,7 @@
         "incenteev/composer-parameter-handler": "~2.0",
 	"blueimp/jquery-file-upload": "9.2.*",
 	"ornicar/gravatar-bundle": "1.*",
-        "maatwebsite/excel": "@stable"
+        "illuminate/filesystem": "@stable"
     },
     "require-dev": {
         "behat/behat": "2.5.*",

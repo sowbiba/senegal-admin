@@ -1,3 +1,11 @@
+test_my_test_laravel:
+    resource: "@TestMyTestLaravelBundle/Resources/config/routing.php"
+    prefix:   /
+
+test_my_test:
+    resource: "@TestMyTestBundle/Resources/config/routing.yml"
+    prefix:   /
+
 nextmoovment_reference:
     resource: "@NextmoovmentReferenceBundle/Resources/config/routing.yml"
     prefix:   /
