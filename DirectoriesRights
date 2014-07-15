@@ -1,0 +1,2 @@
+setfacl -R -m u:www-data:rwX -m u:isow:rwX /var/www/symfony_perso/app/cache
+setfacl -R -m u:www-data:rwX -m u:isow:rwX /var/www/symfony_perso/app/logs
