@@ -1,3 +1,0 @@
-#nextmoovment_reference_homepage:
-#    pattern:  /hello/{name}
-#    defaults: { _controller: NextmoovmentReferenceBundle:Default:index }
