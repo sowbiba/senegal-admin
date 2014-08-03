@@ -28,8 +28,9 @@
 	"ornicar/gravatar-bundle": "1.*",
         "illuminate/filesystem": "@stable",
         "sensio/generator-bundle": "~2.3",
-        "sowbiba/senegal-api"
+        "sowbiba/senegal-api": "dev-master"
     },
+    
     "require-dev": {
         "behat/behat": "2.5.*",
         "behat/symfony2-extension": "*",
