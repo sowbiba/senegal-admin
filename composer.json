@@ -6,6 +6,12 @@
     "autoload": {
         "psr-0": { "": "src/", "SymfonyStandard": "app/" }
     },
+    "repositories": [
+      {
+        "type": "vcs",
+        "url": "git@github.com:sowbiba/senegal-api.git"
+      }
+    ],
     "require": {
         "php": ">=5.3.3",
         "symfony/symfony": "2.5.*",
@@ -21,7 +27,8 @@
 	"blueimp/jquery-file-upload": "9.2.*",
 	"ornicar/gravatar-bundle": "1.*",
         "illuminate/filesystem": "@stable",
-        "sensio/generator-bundle": "~2.3"
+        "sensio/generator-bundle": "~2.3",
+        "sowbiba/senegal-api"
     },
     "require-dev": {
         "behat/behat": "2.5.*",
