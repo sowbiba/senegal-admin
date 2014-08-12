@@ -1,0 +1,17 @@
+{% extends "::backoffice.html.twig" %}
+
+{% block content %}
+    <table class="table table-bordered table-condensed table-hover table-responsive table-striped">
+        <thead>
+            
+        </thead>
+        <tbody>
+            {% for document in documents %}
+            <tr>
+                <td>{{ document.id }}</td>
+                <td>{{ document.name }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock content %}

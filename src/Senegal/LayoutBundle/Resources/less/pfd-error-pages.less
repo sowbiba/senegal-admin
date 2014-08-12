@@ -1,0 +1,164 @@
+/*
+
+    Profideo V2
+
+    Error Pages
+*/
+
+//
+// Load core variables and mixins
+// --------------------------------------------------
+
+@import "variables.less";
+@import "bootstrap/mixins.less";
+
+
+// Error Pages
+//-------------------
+
+.error-page {
+    overflow: hidden; height: auto;
+    margin-top:15px;
+    .back-index{ margin-top:30px;}
+
+    main.main{
+        .main-internal{ background:none;}
+    }
+
+  /*
+    V0 -> Keep Calm & Carry On :: Still in use in undefined errors
+  */
+
+    .error-illu-box {
+        @shadow: 0 1px 3px rgba(0,0,0,.25);
+        @font-error-base:10px;
+
+        background: #ed1847 url(/bundles/pfdlayout/img/profideo-404.jpg) 50% 25px no-repeat;
+        border:2px solid #333;
+        .box-shadow(@shadow);
+        color:#fff;
+        margin:0 auto;
+        padding:50px;
+        padding-top:75px;
+        text-align: center;
+        width:550px;
+
+        span{
+            display: block;
+            font-weight:bold;
+            padding:10px 0;
+            text-align: center;
+            text-shadow: 1px 2px 2px #333;
+            text-transform: uppercase;
+            &.err-keep {
+                font-size:@font-error-base*4.5;
+            }
+            &.err-and {
+                font-size:@font-error-base*4.5;
+                text-transform: lowercase;
+            }
+            &.err-go-back {
+                font-size:@font-error-base*2.5;
+            }
+            &.err-to-the {
+                font-size:@font-error-base*3.5;
+                text-transform: lowercase;
+            }
+            &.err-home {
+                font-size:@font-error-base*3.5;
+            }
+
+            a {
+                color:#fff;
+                &:hover {
+                    color:#333;
+                    text-decoration:none;
+                    text-shadow: 1px 2px 2px #fff;
+                }
+            }
+
+        }
+    }
+    .error-code-content {
+        margin:0 auto;
+        padding:50px;
+        padding-bottom:0;
+        text-align: center;
+        width:550px;
+        .code-text{font-size: 55px; text-transform: uppercase; font-weight: bold; text-shadow: 0px 1px 0px #ed1847;}
+    }
+    .logout-403 {
+        margin-top:20px;
+        text-align:center;
+    }
+
+  /* v2 */
+
+  .error-content{
+      background:#fff;
+      border-radius:4px;
+      margin: 0 auto;
+      margin-top:150px;
+      padding:50px 10px ;
+      width:1000px;
+    .clearfix();
+
+      > div {
+        float:left;
+      }
+
+      h1{
+        font-size: 26px;
+      }
+      h2{
+        font-size: 16px;
+        font-weight: normal;
+      }
+  }
+
+  .error-img{
+    display: block;
+    height: 210px;
+    width: 160px;
+    background-position: 0 50%;
+    background-repeat: no-repeat;
+    background-color: transparent;
+
+    &.error-404{
+      background-image: url(/bundles/pfdlayout/img/badge-erreur-404-b.gif);
+    }
+
+    &.error-403{
+      background-image: url(/bundles/pfdlayout/img/badge-erreur-403-r.gif);
+    }
+
+    &.error-500{
+      background-image: url(/bundles/pfdlayout/img/badge-erreur-500-j.gif);
+    }
+  }
+
+  .error-txt{
+    background: #F1F1F1;
+    border: 1px solid #b4b2b2;
+    border-radius:4px;
+    .box-shadow( 5px 5px 10px 0px #c0c0c0);
+    padding:20px 40px;
+    max-width:800px;
+  }
+
+  ul{
+    margin-bottom:25px;
+    margin-top:15px;
+
+    li{
+      font-size:16px;
+      margin-bottom:1em;
+    }
+  }
+
+  p.links{
+    font-size:16px;
+    padding-right: 25px;
+    text-align: right;
+  }
+}

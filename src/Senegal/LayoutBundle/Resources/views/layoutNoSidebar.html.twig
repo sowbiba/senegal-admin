@@ -1,0 +1,11 @@
+{% extends 'SenegalLayoutBundle::layout.html.twig' %}
+
+{# By default, remove id & class for body so we validate markup #}
+{% block bodyClass %}{% endblock %}
+{% block bodyId %}{% endblock %}
+
+{# NO SIDEBAR, clear it #}
+{% block sidebarWrapper %}{% endblock %}
+
+{# Content. No sidebar implies, no more span9 on content, full width #}
+{% block contentSize %}12{% endblock %}

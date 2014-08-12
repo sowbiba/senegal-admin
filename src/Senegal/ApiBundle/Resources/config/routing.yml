@@ -1,0 +1,3 @@
+senegal_api_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: SenegalApiBundle:Default:index }

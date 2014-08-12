@@ -1,0 +1,110 @@
+/*
+
+    pfd-reset.less
+
+    Some Boostrap 3 defaut values we don't want so we have neither to repeat nor to change the BS Core files
+
+*/
+
+
+//
+// Load core variables and mixins
+// --------------------------------------------------
+
+@import "variables.less";
+@import "bootstrap/mixins.less";
+
+
+//
+// Profideo Boostrap Reset
+// -----------------------------------------------------
+
+//
+// Remove the Extra width on the thead bottom border from 2px -> 1px
+
+.table-bordered > thead > tr > th,
+.table-bordered > thead > tr > td {
+    border-bottom-width: 1px;
+}
+
+
+//
+// Forms
+//-------------------
+
+//
+// form-control border-radius value
+
+.form-control {
+    height : @input-height-base;
+    padding: @padding-small-vertical @padding-small-horizontal;
+}
+
+
+fieldset {
+    margin-top: @font-size-base;
+    +fieldset{
+        // case we have more than 1 part in the form
+        margin-top:@padding-large-vertical*2.5;
+    }
+}
+
+
+
+
+//
+// Bootstrap components
+// --------------------------------------------------
+
+
+//
+// Addon append & prepend
+
+.input-group-addon {
+    padding: 5px 8px;
+}
+
+
+//
+// Pagination
+// we just want to reduce the border-radius
+// clone from pagination.less, keep only & change what we need
+// radius applied to first & last child a elements
+
+.pagination {
+  border-radius: @border-radius-small;
+  > li {
+    &:first-child {
+      > a, > span {
+        .border-left-radius(@border-radius-small);
+      }
+    }
+    &:last-child {
+      > a, > span {
+        .border-right-radius(@border-radius-small);
+      }
+    }
+  }
+}
+
+
+ //
+// Breadcrumbs
+//-------------------
+// Update the default breadcrumb code, following the commit below
+// https://github.com/dancek/bootstrap/commit/a19ff2f50fae73df3c80b104647260c13b1a8c00
+// to accomodate the change of the separator without the need of going into the source file
+
+.breadcrumb {
+  > li {
+    &+li:before {
+      content: "@{breadcrumb-separator}\00a0"; // Unicode space added since inline-block means non-collapsing white-space
+    }
+    a{
+        color: @breadcrumb-active-color;
+    }
+  }
+  > .active {
+    color: @breadcrumb-active-color;
+  }
+}

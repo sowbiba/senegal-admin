@@ -1,0 +1,333 @@
+/*
+
+    Profideo V2
+
+    Theme
+*/
+
+//
+// Load core variables and mixins
+// --------------------------------------------------
+
+@import "variables.less";
+@import "bootstrap/mixins.less";
+
+
+//
+// Theme Variables
+//-------------------
+
+@footerHeight : 50px;
+@asideHeaderBg : @primaryColor;
+
+//
+// Form variables
+//      Extending boostrap
+//-------------------
+.form-row{
+    margin:@font-size-base 0  @font-size-base 0 ;
+    &:first-child{ margin-left:0;}
+    .clearfix();
+}
+// Hidden form row (example: when the field is NA)
+.form-row-hidden{
+  display:none;
+}
+.form-row-na{}
+.row-widget{}
+.row-button{}
+
+.btn + .btn {margin-left:@font-size-base*0.75}
+
+
+.chapter-hidden{
+    display:none;
+    h1, h2,h3,h4,h5,h6{
+       background:#666 !important;
+    }
+}
+.chapter-row-hidden{display:none !important;}
+.chapter-col-hidden{display:none !important;}
+
+.chapter-sidebar-hidden{
+    display:none !important;
+}
+
+//
+// Typos
+//-------------------
+
+.sansFontFamily{  font-family  : @font-family-sans-serif;}
+.serifFontFamily{ font-family  : @font-family-serif;}
+.monoFontFamily{  font-family  : @font-family-monospace;}
+
+.fa-1-5x{font-size: 1.5em}
+
+//
+// Typos colors & specific links
+//-------------------
+
+.link{
+        i{
+            margin-right:@font-size-base*0.5;
+        }
+        &:hover{
+            text-decoration:none;
+        }
+}
+.link-delete, .link-invalid{
+        color:@dangerColor;
+        &:hover{
+            color: darken(@dangerColor, 10%);
+            text-decoration:none;
+        }
+}
+/*
+  Une couleur différente pour les URL déjà visitées #6312.
+  targeting here visited links within tables body in the main content that dont are not btn
+*/
+.content tbody a:not(.btn):visited{
+  color:@link-visited-color;
+}
+
+
+//
+// Icons
+//-------------------
+
+.fa-color-success{color:@brand-success}
+.fa-color-warning{color:@brand-warning}
+.fa-color-danger{color:@brand-danger}
+
+.icon-yes:before{color:@brand-success;}
+.icon-no:before{color:@brand-danger;}
+.icon-red:before{color:@brand-danger;}
+
+// Some Bootstrap resets
+//-------------------
+
+// We don't want the spans to push down the table rows: reset min-height to line-height
+.row-fluid .table, .row .table [class*="col"]{ min-height:@line-height-small;}
+
+
+//
+//  Page Skeleton
+//-------------------
+
+/* Let's get a 100% min-height always */
+html,body{ height:100%;}
+
+/* Page Wrapper - Make sure nothing flies around */
+.page-wrapper{
+    // page Wrapper to 100% & positionned relative so that the footer remains a child Node
+    position:relative;
+	min-height:100%;
+    width:98%;
+    margin:0 auto;
+    padding:0 15px; //make sure internal rows dont extend out of the wrapper
+}
+
+/* Header - Main Page Header */
+header.main{
+    .clearfix();
+    display:none;
+}
+
+/* Main - Main Page Content Wrapper */
+main.main{
+    display:block;
+    margin-bottom:@font-size-base*1.5;
+
+    min-height:100%;
+    .clearfix();
+
+    .main-internal{
+        background:@body-bg;
+        .border-top-radius(@border-radius-large);
+        .clearfix();
+    }
+}
+
+/* sub Nav */
+.subNav-internal{
+    margin-bottom:@font-size-base*2;
+    margin-right:0;
+    margin-left:0;
+
+    ul.nav{
+        padding-left:2em;
+    }
+
+}
+/* bootstrap reset : Have the active subnav tab to display cursor as link */
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus { cursor:pointer;}
+
+/* Main sub-sections : Content + Sidebar */
+section.content{
+     position:relative;
+}
+.aside-internal{
+    .clearfix();
+}
+.content-wrapper{
+    position:relative;
+    margin-left:0;
+    margin-right:0;
+    .clearfix();
+}
+
+/* Footer - Main Page Footer */
+footer.main{
+    // we want the footer always at bottom of page
+    bottom: 0;
+    position:absolute;
+    // we want same size a a container-fluid thus apply same white spaces left & right
+    left:0px;
+    right:0px;
+    // none positioning
+    border-top: 1px solid @table-border-color;
+    .clearfix();
+    color:  darken(@table-border-color, 20%);
+    font-size:  @font-size-base*0.8;
+    margin-top:@font-size-base*1.5;
+    min-height: @footerHeight;
+    padding-top:@font-size-base*1.5;
+    text-align:right;
+}
+
+
+
+// Main navigation
+//-------------------
+ .navbar-main{
+    font: @font-family-sans-serif;
+    margin-top:15px;
+    text-transform:uppercase;
+
+   .navbar-nav  > li {
+        border-right:1px solid @navbar-default-border;
+        min-height:@navbar-height;
+    }
+
+    .navbar-header{
+        background-color:@body-bg;
+        border-right:1px solid @navbar-default-border;
+    }
+
+    // profideo logo
+    .navbar-brand{
+        background: url("@{imagePath}/logo-header.png") 5px 50% no-repeat;
+        display:block;
+        min-height:@navbar-height;
+        width:241px;
+        text-indent:-999em;
+    }
+
+    // User links
+    .navbar-nav.navbar-right {
+        background-color:@body-bg;
+        border-left:1px solid @navbar-default-border;
+        min-height:@navbar-height;
+        > li{
+            border-right:none;
+          .clearfix();
+        }
+        > li > a {
+            line-height: @navbar-height;
+            padding:0 15px 0 10px;
+            text-transform:none;
+            display: block;
+            float: left;
+            img{
+                margin-right: 3px;
+            }
+        }
+        > li > a.gravatar {
+          padding-right: 0;
+        }
+        > .open > a {
+            background-color:@body-bg;
+            color:@profideoMainColor;
+            &:hover {
+                background-color:@body-bg;
+                color:@profideoMainColor;
+            }
+        }
+      > li > ul{
+          max-width: 160px;
+      }
+    }
+}
+
+
+// Sidebar Elements
+//-------------------
+.content-wrapper .col-3.aside{
+    padding-right:0;
+}
+.list-no-bullet {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  li {
+    margin-bottom: @font-size-small;
+  }
+}
+
+// Form Errors
+//-------------------
+.form-errors-list{
+    color:@alert-danger-text;
+    list-style-type:none;
+    margin-left:0;
+    padding-left:0;
+    +select, +input, +textarea{
+        border-color:@alert-danger-border;
+        color:@alert-danger-text;
+    }
+}
+
+// error titles
+//-------------------
+ h1.error, h2.error, h3.error, h4.error,h5.error,h6.error{
+    color:@brand-danger;
+    margin-top:0;
+    i{
+        margin-right:@font-size-base;
+        color:@brand-danger;
+     }
+}
+
+
+
+// common Elements
+//---------------------
+
+// color Picker for backgrounds
+.user-color-picker{position:absolute; top:1px; left:1px; width:16px; height: 16px; background: url(/bundles/pfdlayout/img/color-wheel.png) 0 0 no-repeat;}
+.colpick {z-index:1001;}
+// Modal "overlay" showing at top of page on an AJAX request
+#modalProcessing{
+    border:2px solid @alert-info-border;
+    .border-bottom-radius(@border-radius-large);
+    .box-shadow(0px 5px 5px 0px #cccccc;);
+    background: @alert-info-bg;
+    color:@alert-info-text;
+    display:none;
+    font-size: 18px;
+    font-weight: bold;
+    left: 50%;
+    padding:10px 25px;
+    position: fixed;
+    .size(250px; 80px);
+    text-align:center;
+    top:-5px;
+    margin-left:-250px;
+    z-index:100000;
+    i{
+        color:@alert-info-text;
+        &:before{margin:5px;}
+    }
+}

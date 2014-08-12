@@ -1,0 +1,52 @@
+ {# js library #}
+        {% javascripts
+            '@SenegalLayoutBundle/Resources/public/javascripts/jquery-2.0.3.js'
+            output='javascripts/jquery.js'
+        %}
+            <script src="{{ asset_url }}"></script>
+        {% endjavascripts %}
+
+        {# js for main navigation #}
+        {#% javascripts
+            '@SenegalLayoutBundle/Resources/public/javascripts/bootstrap-dropdown.js'
+            '@SenegalLayoutBundle/Resources/public/javascripts/twitter-bootstrap-hover-dropdown.min.js'
+            output='javascripts/nav.js'
+        %}
+            <script src="{{ asset_url }}"></script>
+        {% endjavascripts %#}
+
+        {# Bootstrap #}
+        {% javascripts
+            '@SenegalLayoutBundle/Resources/public/javascripts/bootstrap/affix.js'
+            '@SenegalLayoutBundle/Resources/public/javascripts/bootstrap/alert.js'
+            '@SenegalLayoutBundle/Resources/public/javascripts/bootstrap/button.js'
+            '@SenegalLayoutBundle/Resources/public/javascripts/bootstrap/carousel.js'
+            '@SenegalLayoutBundle/Resources/public/javascripts/bootstrap/collapse.js'
+            '@SenegalLayoutBundle/Resources/public/javascripts/bootstrap/dropdown.js'
+            '@SenegalLayoutBundle/Resources/public/javascripts/bootstrap/modal.js'
+            '@SenegalLayoutBundle/Resources/public/javascripts/bootstrap/scrollspy.js'
+            '@SenegalLayoutBundle/Resources/public/javascripts/bootstrap/tab.js'
+            '@SenegalLayoutBundle/Resources/public/javascripts/bootstrap/tooltip.js'
+            '@SenegalLayoutBundle/Resources/public/javascripts/bootstrap/popover.js'
+            '@SenegalLayoutBundle/Resources/public/javascripts/bootstrap/transition.js'
+            output='javascripts/bootstrap.js'
+        %}
+            <script src="{{ asset_url }}"></script>
+        {% endjavascripts %}
+
+        {# Plugins #}
+        {% javascripts
+            '@SenegalLayoutBundle/Resources/public/javascripts/plugins/log.js'
+            '@SenegalLayoutBundle/Resources/public/javascripts/plugins/jquery.scrollTo.min.js'
+            '@SenegalLayoutBundle/Resources/public/javascripts/plugins/jquery.localScroll.min.js'
+            '@SenegalLayoutBundle/Resources/public/javascripts/plugins/jquery.toplink.min.js'
+            '@SenegalLayoutBundle/Resources/public/javascripts/plugins/chosen.jquery.min.js'
+            '@SenegalLayoutBundle/Resources/public/javascripts/plugins/jquery.cookie.js'
+            '@SenegalLayoutBundle/Resources/public/javascripts/plugins/ajaxq.min.js'
+            '@SenegalLayoutBundle/Resources/public/javascripts/plugins/twitter-bootstrap-hover-dropdown.min.js'
+            '@SenegalLayoutBundle/Resources/public/javascripts/plugins/colpick.js'
+            '@SenegalLayoutBundle/Resources/public/javascripts/plugins/keypress-2.0.2.min.js'
+            output='javascripts/plugins.js'
+        %}
+            <script src="{{ asset_url }}"></script>
+        {% endjavascripts %}

@@ -1,0 +1,47 @@
+{% extends 'SenegalLayoutBundle::layoutLegacy.html.twig' %}
+
+{% block javascripts %}
+
+  {{ parent() }}
+
+  {#Chapitres#}
+  <script type="text/javascript" src="/js/chapitres/ajax.js"></script>
+  <script type="text/javascript" src="/js/chapitres/drag-drop-folder-tree.js"></script>
+  <script type="text/javascript" src="/js/interface.js"></script>
+
+
+  <style type="text/css">
+    /* Hide list-style-type */
+    li {
+      list-style-type:none;
+      vertical-align:middle;
+    }
+    #dhtmlgoodies_tree2 li,
+    #dhtmlgoodies_tree2 li a.chapitre {
+      cursor: move;
+    }
+    /* Remove style on root node */
+    #dhtmlgoodies_tree2 li#node500 a.firstchild,
+    #dhtmlgoodies_tree2 li#node500 a.firstchild:hover,
+    #dhtmlgoodies_tree2 li#node500{
+      cursor:default;
+      text-decoration:none;
+    }
+  </style>
+  <script type="text/javascript">
+    //<![CDATA[
+
+    treeObj = new JSDragDropTree();
+    treeObj.setTreeId("dhtmlgoodies_tree2");
+
+    treeObj.initTree();
+    treeObj.expandAll();
+
+    //]]>
+  </script>
+
+{% endblock %}
+
+{% block content %}
+    {{ content|raw }}
+{% endblock %}

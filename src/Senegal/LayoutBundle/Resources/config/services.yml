@@ -1,0 +1,7 @@
+parameters:
+#    senegal_layout.example.class: Senegal\LayoutBundle\Example
+
+services:
+#    senegal_layout.example:
+#        class: %senegal_layout.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

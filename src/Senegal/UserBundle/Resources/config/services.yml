@@ -1,0 +1,11 @@
+parameters:
+#    senegal_user.example.class: Senegal\UserBundle\Example
+
+services:
+#    senegal_user.example:
+#        class: %senegal_user.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
+
+   SenegalApiService:
+       class:        "%senegal_api.class%"
+       arguments:    ["%local_urls_api%"]

@@ -1,0 +1,15 @@
+{% extends 'SenegalLayoutBundle::layoutLegacy.html.twig' %}
+
+{% block javascripts %}
+
+  {{ parent() }}
+
+  <script type="text/javascript" src="/js/back/sfGuardUser/checkUserAttribute.js"></script>
+{% endblock %}
+
+{% block breadcrumbWrapper ''%}
+
+{% block subNav %}
+  {% include 'SenegalUserBundle:Includes:subnav.html.twig' with {'tabActive' : app.request.get("tabActive"), 'user' : user} %}
+{% endblock subNav %}
+

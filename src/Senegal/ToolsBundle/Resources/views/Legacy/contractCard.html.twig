@@ -1,0 +1,35 @@
+{% extends 'SenegalLayoutBundle::layoutLegacy.html.twig' %}
+
+{% block headConfig %}
+
+  {{ parent() }}
+
+  <link rel="stylesheet" href="/css/back/contractCard.css" type="text/css"/>
+
+{% endblock %}
+
+{% block javascripts %}
+
+  {{ parent() }}
+
+  {% javascripts '@SenegalToolsBundle/Resources/public/javascripts/ContractCard/contractCard.js' output='javascripts/contractCard.js' %}
+  <script src="{{ asset_url }}"></script>
+  {% endjavascripts %}
+
+  {% javascripts '@SenegalToolsBundle/Resources/public/javascripts/ContractCard/Logger.js' output='javascripts/Logger.js' %}
+  <script src="{{ asset_url }}"></script>
+  {% endjavascripts %}
+
+  {# ContractCard Model #}
+  {% javascripts
+  '@SenegalToolsBundle/Resources/public/javascripts/ContractCard/model/*'
+  '@SenegalToolsBundle/Resources/public/javascripts/ContractCard/model/*/*'
+  output='javascripts/contractCardModel.js' %}
+  <script src="{{ asset_url }}"></script>
+  {% endjavascripts %}
+
+{% endblock %}
+
+{% block content %}
+    {{ content|raw }}
+{% endblock %}

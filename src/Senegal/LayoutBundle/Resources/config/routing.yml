@@ -1,0 +1,3 @@
+senegal_layout_homepage:
+    path:     /
+    defaults: { _controller: SenegalLayoutBundle:Default:index }

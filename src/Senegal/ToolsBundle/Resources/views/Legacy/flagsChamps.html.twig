@@ -1,0 +1,23 @@
+{% extends 'SenegalLayoutBundle::layoutLegacy.html.twig' %}
+
+{% block headConfig %}
+  {{ parent() }}
+
+    <link rel="stylesheet" type="text/css" href="/css/../obsArborescencePlugin/css/back.20100510.css">
+{% endblock %}
+
+{% block javascripts %}
+  {{ parent() }}
+
+    <script type="text/javascript" src="/obsArborescencePlugin/js/back.20090810.js"></script>
+    <script type="text/javascript" src="/js/dynamic_forms.js"></script>
+    <script type="text/javascript" src="/js/pliageDpliage.js"></script>
+    <script type="text/javascript" src="/js/back/flagschamps.js"></script>
+{% endblock %}
+
+{% block content %}
+    {{ content|raw }}
+{% endblock %}
+
+{% block breadcrumbWrapper '' %}
+{% block subNavWrapper '' %}

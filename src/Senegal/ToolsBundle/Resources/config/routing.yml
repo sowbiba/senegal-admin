@@ -1,0 +1,17 @@
+login_check:
+    path:   /admin/login_check
+    defaults:  { _controller: SenegalToolsBundle:Security:loginCheck }
+    
+login:
+    path:   /admin/login
+    defaults:  { _controller: SenegalToolsBundle:Security:login }
+
+login_as:
+    path:   /admin/login-as/user/{id}/group/{groupId}
+    defaults:  { _controller: SenegalToolsBundle:Security:loginAs }
+    requirements:
+      id :      \d+
+      groupId : \d+
+
+logout:
+    path:   /admin/logout

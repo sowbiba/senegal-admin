@@ -1,0 +1,137 @@
+{#{% extends 'SenegalLayoutBundle::layoutNoSidebar.html.twig' %}#}
+
+{% block bodyId %} id="pageHomepage" {% endblock %}
+{% block bodyClass %} class="page-homepage"{% endblock %}
+
+{% block breadcrumbWrapper ''%}
+{% block subNavWrapper ''%}
+
+{% block content %}
+    <ul  class="home-wrapper row">
+        {% if is_granted('ROLE_BACKOFFICE_CONTRATS_CONSULTATION') %}
+            <li class="panel-data">
+              <h3>Données</h3>
+              <ul>
+                  <li class="clearfix">
+                      <a href="{{ path('senegal_contract_list') }}">Contrats</a>
+                      <input type="text" class="form-control" name="parentObject" data-target="{{path('senegal_contract_legacy_data')}}">
+                    </li>
+                    {% if is_granted('ROLE_BACKOFFICE_SOCIETES_PARAMETRAGE') %}
+                        <li class="clearfix">
+                            <a href="{{ path('senegal_companies') }}">Sociétés</a>
+                            <input type="text" class="form-control" name="id"  data-target="{{ path('senegal_companies') }}/edit">
+                        </li>
+                    {% endif %}
+                    <li class="clearfix">
+                        <a href="{{ path('senegal_funds') }}">Fonds</a>
+                         <input type="text" class="form-control" name="id" data-target="{{ path('senegal_funds') }}/edit">
+                    </li>
+                    {% if is_granted('ROLE_BACKOFFICE_CONTRATS_PARAMETRAGE') or is_granted('ROLE_BACKOFFICE_CONTRATS_CONSULTATION') %}
+                        <li class="clearfix">
+                            <a href="{{ path('senegal_productlines') }}">Gammes</a>
+                            <input type="text" class="form-control" name="id" data-target="{{ path('senegal_productlines_edit') }}"></form>
+                        </li>
+                    {% endif %}
+              </ul>
+            </li>
+        {% endif %}
+
+        {% if is_granted('ROLE_BACKOFFICE_NEWS_CONSULTATION') %}
+            <li class="panel-news">
+                <h3>News</h3>
+                <ul>
+                    <li>
+                        <a href="{{ path('senegal_news') }}">News</a>
+                        <input type="text" class="form-control" name="id" data-target="{{ path('senegal_news') }}/edit">
+                    </li>
+                    {% if is_granted('ROLE_BACKOFFICE_NEWS_PARAMETRAGE') %}
+                        <li><a href="{{ path('senegal_news_type') }}">Types de news</a></li>
+                    {% endif %}
+                    <li><a href="{{ path('senegal_letters') }}">Gestion des lettres</a></li>
+               </ul>
+            </li>
+        {% endif %}
+
+        {% if is_granted('ROLE_BACKOFFICE_CORRESPONDANTS') or
+                      is_granted('ROLE_BACKOFFICE_CONTRATS_EDITION') or
+                      is_granted('ROLE_BACKOFFICE_CONTRATS_PARAMETRAGE') or
+                      is_granted('ROLE_BACKOFFICE_QRCODE_EDITION') or
+                      is_granted('ROLE_BACKOFFICE_USERS_ADMIN') %}
+            <li class="panel-magazine">
+                <h3>Magazine</h3>
+                <ul>
+                    <li><a href="{{ path('senegal_correspondants_panel') }}">Panneau</a></li>
+                    <li><a href="{{ path('senegal_correspondants_inwait') }}">En attente</a></li>
+                    <li><a href="{{ path('senegal_correspondants_unrelated_contracts') }}">Contrats non liés</a></li>
+                    <li><a href="{{ path('senegal_correspondants') }}">Correspondants</a></li>
+                </ul>
+            </li>
+        {% endif %}
+
+        {% if is_granted('ROLE_BACKOFFICE_USERS_CLIENT') or is_granted('ROLE_BACKOFFICE_USERS_ADMIN') %}
+            <li class="panel-users">
+                <h3>Utilisateurs</h3>
+                    <ul>
+                        <li>
+                            <a href="{{ path('senegal_users') }}">Utilisateurs</a>
+                            <input type="text" class="form-control" name="id"  data-target="{{ path('senegal_users_edit') }}">
+                        </li>
+                        <li><a href="{{ path('senegal_users_connexions') }}">Connexions</a></li>
+                        {% if is_granted('ROLE_BACKOFFICE_INVOICE') or  is_granted('ROLE_BACKOFFICE_USERS_ADMIN') %}
+                            <li><a href="{{ path('senegal_invoicing') }}">Facturation</a>
+                                <input type="text" class="form-control" name="slug" data-target="{{ path('senegal_home_user_invoice') }}">
+                            </li>
+                        {% endif %}
+                        <li><a href="{{ path('senegal_company_affiliation') }}">Sociétés de rattachement</a></li>
+                    </ul>
+            </li>
+        {% endif %}
+
+
+        <li class="panel-tools">
+            <h3>Outils</h3>
+                <ul>
+                    {% if is_granted('ROLE_BACKOFFICE_CONTRATS_CONSULTATION') %}
+                        <li><a href="{{ path('senegal_reporting') }}">Exports</a></li>
+                    {% endif %}
+                    {% if is_granted('ROLE_BACKOFFICE_BI_REPORT_CONSULTATION') %}
+                        <li><a href="{{ path('senegal_bi_report') }}">Rapports BI</a></li>
+                    {% endif %}
+                    {% if is_granted('ROLE_BACKOFFICE_CONTRACTCARD_EDITION') %}
+                        <li><a href="{{ path('senegal_contract_card') }}">Fiches contrats</a>
+                            <input type="text" class="form-control" name="id" data-target="{{ path('senegal_contract_cards_edit') }}"/>
+                        </li>
+                    {% endif %}
+
+                    {#  app.user.getBackOfficeRole == 4 is translation of  $sf_user->getBackOfficeRole() == sfGuardGroupPeer::BACKOFFICE_COMMERCIAL_GROUP_ID ):
+                        from sf1 since no role/group/permission defined for those users
+                    #}
+                    {% if is_granted('ROLE_BACKOFFICE_USERS_ADMIN') or app.user.getBackOfficeRole == 4 %}
+                        <li><a href="{{ path('senegal_marketing_campaign') }}">Campagnes publicitaires</a>
+                            <input type="text" class="form-control" name="id" data-target="{{ path('senegal_marketing_campaign_edit') }}"/>
+                        </li>
+                    {% endif %}
+                </ul>
+        </li>
+
+
+        <li class="panel-account">
+            <h3>Mon Compte</h3>
+                <ul>
+                    {% if is_granted('ROLE_PREMIUM_USER') %}
+                        <li><a href="{{ urls.premium }}">Premium</a></li>
+                    {% endif %}
+                    {% if is_granted('ROLE_BASEFRONT_USER') %}
+                        <li><a href="{{ urls.basefront }}">Basefront</a></li>
+                    {% endif %}
+                    {% if is_granted('ROLE_DISTRIB_USER') %}
+                        <li><a href="{{ urls.distrib }}">Distrib</a></li>
+                    {% endif %}
+                    <li><a href="{{ urls.corporate }}">Corporate</a></li>
+                    <li><a href="{{ path("senegal_profile") }}">Mon profil</a></li>
+                    <li><a href="{{ path('logout') }}">Déconnexion</a></li>
+                </ul>
+        </li>
+
+    </ul>
+{% endblock content %}

@@ -17,3 +17,18 @@ parameters:
     debug_toolbar:          true
     debug_redirects:        false
     use_assetic_controller: true
+
+    #documents upload
+    upload_dir:          /import/documents/
+    upload_tmp_dir:      %kernel.root_dir%/../web/uploads/document/
+    web_dir:             %kernel.root_dir%/../web/
+
+    #Senegal Api
+    local_urls_api:      "http://senegal-api.dev"
+    senegal_api.class:   "ApiHandler/ApiHandler"
+    senegal_api.key:     "key value for your api"
+    senegal_api.token:   "token value for your api"
+
+    senegal_ws_url: 'http://senegal-api.dev/ws/'
+    senegal_ws_user: ???
+    senegal_ws_password: ????

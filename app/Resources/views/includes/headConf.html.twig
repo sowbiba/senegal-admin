@@ -1,0 +1,17 @@
+
+  {% block stylesheets %}
+        {% stylesheets combine=true output="styles/main.css"
+            '@SenegalLayoutBundle/Resources/less/variables.less'
+            '@SenegalLayoutBundle/Resources/less/bootstrap.less'
+            '@SenegalLayoutBundle/Resources/less/pfd-reset.less'
+            '@SenegalLayoutBundle/Resources/less/pfd-theme.less'
+            '@SenegalLayoutBundle/Resources/less/pfd-components.less'
+            '@SenegalLayoutBundle/Resources/less/pfd-pages.less'
+            '@SenegalLayoutBundle/Resources/less/pfd-error-pages.less'
+        %}
+            <link rel="stylesheet" href="{{ asset_url  }}" type="text/css">
+        {% endstylesheets %}
+
+  {% endblock %}
+
+  {% block javascriptsHeader %}{% endblock %}

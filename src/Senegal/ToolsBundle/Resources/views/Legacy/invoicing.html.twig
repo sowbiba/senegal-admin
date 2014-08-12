@@ -1,0 +1,10 @@
+{% extends 'SenegalLayoutBundle::layoutLegacy.html.twig' %}
+
+{% block javascripts %}
+
+  {{ parent() }}
+
+  <script type="text/javascript" src="/js/back/sfGuardUser/checkUserAttribute.js"></script>
+  <script type="text/javascript" src="/js/back/invoice/manageRenewal.js"></script>
+  <script type="text/javascript" src="/js/back/invoice/exportInvoiceReporting.js"></script>
+{% endblock %}

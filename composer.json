@@ -4,7 +4,11 @@
     "type": "project",
     "description": "The \"Symfony Standard Edition\" distribution",
     "autoload": {
-        "psr-0": { "": "src/", "SymfonyStandard": "app/" }
+        "psr-0": { 
+            "": "src/", 
+            "SymfonyStandard": "app/",
+            "ApiHandler": "vendor/ApiHandler/"
+        }
     },
     "repositories": [
       {
@@ -26,8 +30,10 @@
         "incenteev/composer-parameter-handler": "~2.0",
 	"blueimp/jquery-file-upload": "9.2.*",
 	"ornicar/gravatar-bundle": "1.*",
+        "jms/security-extra-bundle": "1.5.*",
         "illuminate/filesystem": "@stable",
         "sensio/generator-bundle": "~2.3",
+        "oyejorge/less.php": "dev-master",
         "sowbiba/senegal-api": "dev-master"
     },
     

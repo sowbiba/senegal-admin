@@ -1,0 +1,306 @@
+/*
+    pfd-components.less
+
+    Styles for the reusable components used in Profideo V2.
+
+    If path is not specified in the component's file, this implies that the it's located in : PfdLayoutBundle\Components\
+
+*/
+
+//
+// Load core variables and mixins
+// --------------------------------------------------
+
+@import "variables.less";
+@import "bootstrap/mixins.less";
+@import "pfd-mixins.less";
+@import "pfd-theme.less";
+
+
+//
+// Modal
+//-------------------
+
+.modal{
+    label{ font-weight:normal; }
+    .modal-body {
+        max-height:none;
+        overflow-y:visible;
+    }
+    // when having a tooltip in a modal, we need to force a height the tooltip main container
+    .modal-tootip-wrapper{
+        max-height:250px;
+        overflow-y:scroll;
+    }
+    .modal-header h3 {
+      font-size: @font-size-base*1.25;
+      line-height:1.25em;
+      margin:0;
+      padding:0;
+    }
+}
+
+//
+// All tables when we can find popovers
+//----------
+
+.table-has-popover{
+    .popover{ max-width:100%; width:auto;}
+    .popover.right .arrow{ top:40px;} // get the popover arrow on fixed on the link line
+    .icon-spinner{
+        margin:1em 0;
+        text-align:center;
+        width:100%;
+    }
+}
+
+
+//
+// Wrapper Block in the sidebar
+// Component : asideGroupElement.html.twig
+//-------------------
+
+.aside-group-element{
+
+        /* element level */
+        background-color:@table-bg-accent;
+        border:1px solid @table-border-color;
+        .border-radius(@border-radius-small);
+        margin-bottom:@font-size-base*0.5;
+
+        /* content elements level */
+        .aside-group-header,
+        .aside-group-content,
+        .aside-group-footer{
+            padding:@font-size-base*0.75;
+        }
+
+        /* top & bottom block get no top & bottom margins, so they stick to the component's boundaries */
+        .aside-group-header{margin-top:0;}
+        .aside-group-footer{margin-bottom:0;}
+
+        /* Elements details */
+        header{
+            border-bottom:1px solid @table-border-color;
+            color:#fff;
+
+            // top wrapper has radius so wa need to add some radius to the header's top line
+            .border-top-left-radius(@border-radius-small);
+            .border-top-right-radius(@border-radius-small);
+            font-size:@font-size-base*1.1;
+            font-weight:bold;
+            #gradient > .vertical(@asideHeaderBg, spin(@asideHeaderBg, 10%));
+            text-shadow: 1px 1px 0 @profideoTextColor;
+
+            h1, h2, h3, h4, h5, h6, p{
+                margin:0;
+                padding:0;
+                font-size:1em;
+                line-height:1.25em;
+            }
+        }
+
+        footer{
+            padding:@font-size-base*0.25;
+            margin:9px;
+            ul, li{
+                list-style-type:none;
+                margin:0;
+                padding:0;
+            }
+            li{
+                margin-bottom:@font-size-base*0.5;
+            }
+         }
+
+         .aside-group-content{
+            .clearfix();
+            h3{
+                font-size:@font-size-large;
+                line-height:@font-size-large*1.25;
+            }
+            hr{
+                margin-top:0;
+                margin-bottom: 0;
+                border-top-color:#e5e5e5;
+            }
+            /* form components in an aside content */
+            form{
+                margin-bottom:0;
+                label{
+                    display:block;
+                    .clearfix();
+                }
+                input, select {
+                    max-width:100%;
+                }
+            }
+         }
+
+        /* @TODO : Rename class below => Not the aside that has no Header, but the asideBlockComponent */
+        /* in case there is no header, we want to increase the content's top margin to give the data some air  */
+        .no-header-aside{
+            margin-top:@font-size-base*0.75;
+        }
+        .no-footer-aside{
+            margin-bottom:@font-size-base*0.75;
+        }
+
+}
+
+
+// Sidebar Affix
+//----------------------
+    body{position:relative;}
+    aside{position:relative; }
+    .affix{top:10px;}
+    .affix-top{top:0px;}
+    .affix-bottom {}
+    // Accordion in affix
+    .panel .aside-group-element{ margin-bottom:0; border:none;}
+
+    .panel-body{ padding:0;}
+    .panel-heading {
+                padding:0;
+                #gradient > .vertical(@asideHeaderBg, spin(@asideHeaderBg, 10%));
+                a {
+                    color:#fff;
+                    display:block;
+                    padding: 10px 15px;
+                    &:hover{
+                        color:#ccc;
+                        text-shadow: 0 1px 0 #000;
+                        text-decoration:none;
+                    }
+                 }
+
+    }
+
+// Sidebar ChapterNav
+//----------------------
+    .chapterNav {
+        .level-0{
+            text-transform: uppercase;
+         }
+        .level-1{
+            border-top:1px solid #ccc;
+            margin-top:15px;
+            padding-top:15px;
+            text-transform: uppercase;
+            &:first-child{
+                margin-top:0;
+            }
+        }
+
+        .level-2{
+            padding-left:10px;
+        }
+
+        .nav > li > a {
+            display: block;
+            padding:2px 5px;
+            position: relative;
+        }
+        .nav > li.active > a {
+            border-bottom:2px solid #A276CC;
+            border-left:4px solid #A276CC;
+            color:#70266C;
+        }
+    }
+
+
+//
+// Sort Header asc & desc icons & links around a th label
+// Component : sortHeader.html.twig
+//-------------------
+
+.sort-group{
+    .clearfix();
+    line-height:auto;
+    width:100%;
+    a{
+        color:@gray;
+        .clearfix();
+        display:block;
+        line-height:100%;
+        text-decoration:none;
+        padding:0 .5em;
+        :hover{
+            color:@profideoMainColor;
+        }
+        &.sort-up{
+            float:left;
+            margin-top:0.35em;
+            vertical-align:middle;
+        }
+        &.sort-down{
+            float:left;
+            vertical-align:middle;
+        }
+        &.sort-active{
+            color:@profideoMainColor;
+        }
+    }
+    .sort-label{
+        display:block;
+        float:left;
+     }
+}
+
+
+//
+// Document details - Partial view containing the chunk of markup with detailled data of a document
+// Component : PdfContractBundle\Document\details.html.twig
+//-------------------
+
+// wrapper : It can inherit from it's own parents.
+.document-detail-wrapper{
+    padding:@font-size-base*0.75;
+    section {
+        .clearfix();
+        h2{
+             font-size:@font-size-base;
+             font-weight: bold;
+             line-height:@font-size-base*2;
+             margin-bottom:0;
+        }
+        span[class*="label"]{
+            margin: 0 @font-size-base*0.5;
+            &:first-child{margin-left:0;}
+        }
+    }
+    // fileSystem nfo
+    .file-fs {
+        span{
+            float:left;
+            display:block;
+            &+span{margin-left:@font-size-base}
+        }
+    }
+    // file manipulation nfo
+    .file-cu{
+        span:not([class*="label"]){
+            font-weight:bold;
+        }
+    }
+}
+
+
+//
+// Breadcrumbs
+// Component : Native Boostrap + Overcharge
+//-------------------
+  .breadcrumb-internal{
+        margin-left:0;
+        margin-right:0;
+    }
+
+.breadcrumb {
+    background-color: @white;
+    > li {
+        a {color: @gray-light;}
+    }
+    > .active {
+        font-weight:bold;
+  }
+}

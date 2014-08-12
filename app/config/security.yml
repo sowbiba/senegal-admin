@@ -1,12 +1,52 @@
 security:
+    encoders:
+        Api\Sdk\Model\User:
+            id: api_password_encoder
+
     providers:
+        sdk:
+            id: sdk_user_provider
         in_memory:
-            memory: ~
+          memory:
+              users:
+                  bibs: { password: bibalpha }
+    
+    role_hierarchy:
+        ROLE_USER:        ROLE_BACKOFFICE_USER
+        ROLE_ADMIN:       [ROLE_USER, ROLE_BACKOFFICE_USER]
+        ROLE_SUPER_ADMIN: [ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
+            
+#    providers:
+#        in_memory:
+#            memory: ~
 
     firewalls:
         dev:
-            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            pattern: ^/(_(profiler|wdt)|css|styles|images|js)/
             security: false
+        senegal:
+            pattern:   ^/admin
+            anonymous: ~
+            form_login:
+                login_path:  /admin/login
+                check_path:  /admin/login_check
+                use_referer: true
+                success_handler: api.security.login_handler
+                default_target_path: /app_dev.php/admin/documents
+            logout:
+                path:   /admin/logout
+                target: /app_dev.php/
+                success_handler: api.security.logout_handler
 
         default:
             anonymous: ~
+            
+            
+    access_control:
+#        - { path: ^/admin/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+#        - { path: ^/api/doc, roles: ROLE_USER }
+#        - { path: ^/request_password, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+#        - { path: ^/admin/documents, roles: ROLE_USER }
+#        - { path: ^/*, roles: ROLE_USER }
+        - { path: ^/contract/all/documents, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        

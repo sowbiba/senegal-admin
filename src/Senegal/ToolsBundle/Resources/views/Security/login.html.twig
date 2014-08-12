@@ -1,0 +1,35 @@
+{% extends 'SenegalLayoutBundle::backofficeLayoutNoSidebar.html.twig' %}
+
+{% block bodyId %} id="pageLogin" {% endblock %}
+{% block bodyClass %} class="page-login"{% endblock %}
+
+{% block nav '' %}
+{% block subNavWrapper '' %}
+{% block breadcrumbWrapper '' %}
+
+{% block content %}
+    <header class="notLoggedHeader"></header>
+    <div class="col-4 col-offset-4 well" data-behat="login-block" style="top:50%; ">
+        {% if error %}
+            <div class="alert alert-danger">{{ dump(error)}}Pseudo ou mot de passe incorrect</div>
+        {% endif %}
+
+        <form action="{{ path('login_check') }}" method="post" role="form">
+            <div class="form-group">
+                <label for="username">Utilisateur</label>
+                <input class="form-control" type="text" id="username" name="_username" value="{{ last_username }}" />
+            </div>
+            <div class="form-group">
+                <label for="password">Mot de passe</label>
+                <input class="form-control" type="password" id="password" name="_password" />
+            </div>
+
+            <input class="btn btn-large btn-primary" type="submit" value="Valider" />
+
+            <p class="text-center">
+                <a href="/request_password">Mot de passe oublié ?</a>
+            </p>
+        </form>
+    </div>
+
+{% endblock %}

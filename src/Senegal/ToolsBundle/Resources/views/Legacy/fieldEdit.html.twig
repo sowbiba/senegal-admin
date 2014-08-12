@@ -1,0 +1,54 @@
+{% extends 'SenegalLayoutBundle::layoutLegacy.html.twig' %}
+{% block javascripts %}
+
+  {{ parent() }}
+
+  <script type="text/javascript">
+    function testFormula() {
+      $.ajax({
+        type: "POST",
+        url: "{{ path('senegal_field_formula_test') }}",
+        data: {
+          {% if fieldId is defined %}
+          champId: {{ fieldId }},
+          {% else %}
+          autoSelectGamme: 1,
+          {% endif %}
+          formule: $("#formula").val()
+        },
+        dataType: "json"
+      })
+          .fail(function () {
+            alert("Erreur serveur lors du test");
+          })
+          .always(function (data, textStatus, jqXHR) {
+            testFormulaCB(jqXHR, data);
+          });
+      ;
+    }
+
+    function testFormulaCB(request, json) {
+      if (null == json) {
+        json = eval("(" + request.responseText + ")");
+      }
+
+      if (json.error) {
+        alert(json.error);
+      }
+      else {
+        var html = '<a href="#" class="close" onclick="$(\'#formulaTestResults\').hide();return false;"></a><table><thead><tr><th>Contrat</th><th>Valeur</th></tr></thead><tbody>';
+        $.each(json.data, function (fieldName, value) {
+          html += '<tr><td>' + fieldName + '</td><td>' + value + '</td></tr>';
+        });
+        html += '</tbody></table>';
+        $('#formulaTestResults').html(html).show();
+      }
+    }
+  </script>
+
+
+
+{% endblock %}
+{% block content %}
+  {{ content|raw }}
+{% endblock %}
