@@ -1,0 +1,4 @@
+services:
+    senegal.api.service:
+        class:        "%senegal_api.class%"
+        arguments:    ["%local_urls_api%"]

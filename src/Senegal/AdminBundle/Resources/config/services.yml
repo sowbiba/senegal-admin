@@ -1,0 +1,7 @@
+parameters:
+#    senegal_admin.example.class: Senegal\AdminBundle\Example
+
+services:
+#    senegal_admin.example:
+#        class: %senegal_admin.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="senegal_user.form.type.user.class">Senegal\UserBundle\Form\Type\UserType</parameter>
+    </parameters>
+
+    <services>
+        <service id="senegal_user.form.type.user" class="%senegal_user.form.type.user.class%" scope="prototype">
+            <tag name="form.type" alias="user" />
+            <argument>%upload_tmp_dir%</argument>
+        </service>    
+    </services>
+</container>

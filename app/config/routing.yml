@@ -1,14 +1,15 @@
+senegal_admin:
+    resource: "@SenegalAdminBundle/Resources/config/routing.yml"
+    prefix:   /
+
 senegal_layout:
     resource: "@SenegalLayoutBundle/Resources/config/routing.yml"
-    prefix:   /
 
 senegal_user:
     resource: "@SenegalUserBundle/Resources/config/routing.yml"
-    prefix:   /
 
 senegal_api:
     resource: "@SenegalApiBundle/Resources/config/routing.yml"
-    prefix:   /
     
 senegal_tools:
     resource: "@SenegalToolsBundle/Resources/config/routing.yml"

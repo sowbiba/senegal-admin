@@ -1,0 +1,652 @@
+/*
+    pfd-components.less
+
+    Styles for the reusable components used in Profideo V2.
+
+    If path is not specified in the component's file, this implies that the it's located in : PfdLayoutBundle\Components\
+
+*/
+/*
+
+    Profideo V2
+
+    Theme
+*/
+.form-row {
+  margin: 12px 0 12px 0;
+}
+.form-row:first-child {
+  margin-left: 0;
+}
+.form-row:before,
+.form-row:after {
+  content: " ";
+  display: table;
+}
+.form-row:after {
+  clear: both;
+}
+.form-row-hidden {
+  display: none;
+}
+.btn + .btn {
+  margin-left: 9px;
+}
+.chapter-hidden {
+  display: none;
+}
+.chapter-hidden h1,
+.chapter-hidden h2,
+.chapter-hidden h3,
+.chapter-hidden h4,
+.chapter-hidden h5,
+.chapter-hidden h6 {
+  background: #666 !important;
+}
+.chapter-row-hidden {
+  display: none !important;
+}
+.chapter-col-hidden {
+  display: none !important;
+}
+.chapter-sidebar-hidden {
+  display: none !important;
+}
+.sansFontFamily {
+  font-family: "open_sansregular", Helvetica, Arial, sans-serif;
+}
+.serifFontFamily {
+  font-family: "gandhi_serifregular", "Times New Roman", Times, serif;
+}
+.monoFontFamily {
+  font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+}
+.fa-1-5x {
+  font-size: 1.5em;
+}
+.link i {
+  margin-right: 6px;
+}
+.link:hover {
+  text-decoration: none;
+}
+.link-delete,
+.link-invalid {
+  color: #da2819;
+}
+.link-delete:hover,
+.link-invalid:hover {
+  color: #ac2014;
+  text-decoration: none;
+}
+/*
+  Une couleur différente pour les URL déjà visitées #6312.
+  targeting here visited links within tables body in the main content that dont are not btn
+*/
+.content tbody a:not(.btn):visited {
+  color: #1f496e;
+}
+.fa-color-success {
+  color: #5cb85c;
+}
+.fa-color-warning {
+  color: #f0ad4e;
+}
+.fa-color-danger {
+  color: #d9534f;
+}
+.icon-yes:before {
+  color: #5cb85c;
+}
+.icon-no:before {
+  color: #d9534f;
+}
+.icon-red:before {
+  color: #d9534f;
+}
+.row-fluid .table,
+.row .table [class*="col"] {
+  min-height: 1.5;
+}
+/* Let's get a 100% min-height always */
+html,
+body {
+  height: 100%;
+}
+/* Page Wrapper - Make sure nothing flies around */
+.page-wrapper {
+  position: relative;
+  min-height: 100%;
+  width: 98%;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+/* Header - Main Page Header */
+header.main {
+  display: none;
+}
+header.main:before,
+header.main:after {
+  content: " ";
+  display: table;
+}
+header.main:after {
+  clear: both;
+}
+/* Main - Main Page Content Wrapper */
+main.main {
+  display: block;
+  margin-bottom: 18px;
+  min-height: 100%;
+}
+main.main:before,
+main.main:after {
+  content: " ";
+  display: table;
+}
+main.main:after {
+  clear: both;
+}
+main.main .main-internal {
+  background: #ffffff;
+  border-top-right-radius: 6px;
+  border-top-left-radius: 6px;
+}
+main.main .main-internal:before,
+main.main .main-internal:after {
+  content: " ";
+  display: table;
+}
+main.main .main-internal:after {
+  clear: both;
+}
+/* sub Nav */
+.subNav-internal {
+  margin-bottom: 24px;
+  margin-right: 0;
+  margin-left: 0;
+}
+.subNav-internal ul.nav {
+  padding-left: 2em;
+}
+/* bootstrap reset : Have the active subnav tab to display cursor as link */
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+  cursor: pointer;
+}
+/* Main sub-sections : Content + Sidebar */
+section.content {
+  position: relative;
+}
+.aside-internal:before,
+.aside-internal:after {
+  content: " ";
+  display: table;
+}
+.aside-internal:after {
+  clear: both;
+}
+.content-wrapper {
+  position: relative;
+  margin-left: 0;
+  margin-right: 0;
+}
+.content-wrapper:before,
+.content-wrapper:after {
+  content: " ";
+  display: table;
+}
+.content-wrapper:after {
+  clear: both;
+}
+/* Footer - Main Page Footer */
+footer.main {
+  bottom: 0;
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  border-top: 1px solid #e5e5e5;
+  color: #b2b2b2;
+  font-size: 9.6px;
+  margin-top: 18px;
+  min-height: 50px;
+  padding-top: 18px;
+  text-align: right;
+}
+footer.main:before,
+footer.main:after {
+  content: " ";
+  display: table;
+}
+footer.main:after {
+  clear: both;
+}
+.navbar-main {
+  font: "open_sansregular", Helvetica, Arial, sans-serif;
+  margin-top: 15px;
+  text-transform: uppercase;
+}
+.navbar-main .navbar-nav > li {
+  border-right: 1px solid #e7e7e7;
+  min-height: 50px;
+}
+.navbar-main .navbar-header {
+  background-color: #ffffff;
+  border-right: 1px solid #e7e7e7;
+}
+.navbar-main .navbar-brand {
+  background: url("/bundles/senegallayout/images/logo-header.png") 5px 50% no-repeat;
+  display: block;
+  min-height: 50px;
+  width: 241px;
+  text-indent: -999em;
+}
+.navbar-main .navbar-nav.navbar-right {
+  background-color: #ffffff;
+  border-left: 1px solid #e7e7e7;
+  min-height: 50px;
+}
+.navbar-main .navbar-nav.navbar-right > li {
+  border-right: none;
+}
+.navbar-main .navbar-nav.navbar-right > li:before,
+.navbar-main .navbar-nav.navbar-right > li:after {
+  content: " ";
+  display: table;
+}
+.navbar-main .navbar-nav.navbar-right > li:after {
+  clear: both;
+}
+.navbar-main .navbar-nav.navbar-right > li > a {
+  line-height: 50px;
+  padding: 0 15px 0 10px;
+  text-transform: none;
+  display: block;
+  float: left;
+}
+.navbar-main .navbar-nav.navbar-right > li > a img {
+  margin-right: 3px;
+}
+.navbar-main .navbar-nav.navbar-right > li > a.gravatar {
+  padding-right: 0;
+}
+.navbar-main .navbar-nav.navbar-right > .open > a {
+  background-color: #ffffff;
+  color: #e2003b;
+}
+.navbar-main .navbar-nav.navbar-right > .open > a:hover {
+  background-color: #ffffff;
+  color: #e2003b;
+}
+.navbar-main .navbar-nav.navbar-right > li > ul {
+  max-width: 160px;
+}
+.content-wrapper .col-3.aside {
+  padding-right: 0;
+}
+.list-no-bullet {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.list-no-bullet li {
+  margin-bottom: 11px;
+}
+.form-errors-list {
+  color: #a94442;
+  list-style-type: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+.form-errors-list + select,
+.form-errors-list + input,
+.form-errors-list + textarea {
+  border-color: #ebccd1;
+  color: #a94442;
+}
+h1.error,
+h2.error,
+h3.error,
+h4.error,
+h5.error,
+h6.error {
+  color: #d9534f;
+  margin-top: 0;
+}
+h1.error i,
+h2.error i,
+h3.error i,
+h4.error i,
+h5.error i,
+h6.error i {
+  margin-right: 12px;
+  color: #d9534f;
+}
+.user-color-picker {
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  width: 16px;
+  height: 16px;
+  background: url(/bundles/pfdlayout/img/color-wheel.png) 0 0 no-repeat;
+}
+.colpick {
+  z-index: 1001;
+}
+#modalProcessing {
+  border: 2px solid #bce8f1;
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 6px;
+  -webkit-box-shadow: 0px 5px 5px 0px #cccccc;
+  box-shadow: 0px 5px 5px 0px #cccccc;
+  background: #d9edf7;
+  color: #31708f;
+  display: none;
+  font-size: 18px;
+  font-weight: bold;
+  left: 50%;
+  padding: 10px 25px;
+  position: fixed;
+  width: 250px;
+  height: 80px;
+  text-align: center;
+  top: -5px;
+  margin-left: -250px;
+  z-index: 100000;
+}
+#modalProcessing i {
+  color: #31708f;
+}
+#modalProcessing i:before {
+  margin: 5px;
+}
+.modal label {
+  font-weight: normal;
+}
+.modal .modal-body {
+  max-height: none;
+  overflow-y: visible;
+}
+.modal .modal-tootip-wrapper {
+  max-height: 250px;
+  overflow-y: scroll;
+}
+.modal .modal-header h3 {
+  font-size: 15px;
+  line-height: 1.25em;
+  margin: 0;
+  padding: 0;
+}
+.table-has-popover .popover {
+  max-width: 100%;
+  width: auto;
+}
+.table-has-popover .popover.right .arrow {
+  top: 40px;
+}
+.table-has-popover .icon-spinner {
+  margin: 1em 0;
+  text-align: center;
+  width: 100%;
+}
+.aside-group-element {
+  /* element level */
+  background-color: #f9f9f9;
+  border: 1px solid #e5e5e5;
+  border-radius: 3px;
+  margin-bottom: 6px;
+  /* content elements level */
+  /* top & bottom block get no top & bottom margins, so they stick to the component's boundaries */
+  /* Elements details */
+  /* @TODO : Rename class below => Not the aside that has no Header, but the asideBlockComponent */
+  /* in case there is no header, we want to increase the content's top margin to give the data some air  */
+}
+.aside-group-element .aside-group-header,
+.aside-group-element .aside-group-content,
+.aside-group-element .aside-group-footer {
+  padding: 9px;
+}
+.aside-group-element .aside-group-header {
+  margin-top: 0;
+}
+.aside-group-element .aside-group-footer {
+  margin-bottom: 0;
+}
+.aside-group-element header {
+  border-bottom: 1px solid #e5e5e5;
+  color: #fff;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  font-size: 13.2px;
+  font-weight: bold;
+  background-image: -webkit-linear-gradient(top, #0088cc 0%, #0066cc 100%);
+  background-image: -o-linear-gradient(top, #0088cc 0%, #0066cc 100%);
+  background-image: linear-gradient(to bottom, #0088cc 0%, #0066cc 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0066cc', GradientType=0);
+  text-shadow: 1px 1px 0 #333333;
+}
+.aside-group-element header h1,
+.aside-group-element header h2,
+.aside-group-element header h3,
+.aside-group-element header h4,
+.aside-group-element header h5,
+.aside-group-element header h6,
+.aside-group-element header p {
+  margin: 0;
+  padding: 0;
+  font-size: 1em;
+  line-height: 1.25em;
+}
+.aside-group-element footer {
+  padding: 3px;
+  margin: 9px;
+}
+.aside-group-element footer ul,
+.aside-group-element footer li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.aside-group-element footer li {
+  margin-bottom: 6px;
+}
+.aside-group-element .aside-group-content {
+  /* form components in an aside content */
+}
+.aside-group-element .aside-group-content:before,
+.aside-group-element .aside-group-content:after {
+  content: " ";
+  display: table;
+}
+.aside-group-element .aside-group-content:after {
+  clear: both;
+}
+.aside-group-element .aside-group-content h3 {
+  font-size: 15px;
+  line-height: 18.75px;
+}
+.aside-group-element .aside-group-content hr {
+  margin-top: 0;
+  margin-bottom: 0;
+  border-top-color: #e5e5e5;
+}
+.aside-group-element .aside-group-content form {
+  margin-bottom: 0;
+}
+.aside-group-element .aside-group-content form label {
+  display: block;
+}
+.aside-group-element .aside-group-content form label:before,
+.aside-group-element .aside-group-content form label:after {
+  content: " ";
+  display: table;
+}
+.aside-group-element .aside-group-content form label:after {
+  clear: both;
+}
+.aside-group-element .aside-group-content form input,
+.aside-group-element .aside-group-content form select {
+  max-width: 100%;
+}
+.aside-group-element .no-header-aside {
+  margin-top: 9px;
+}
+.aside-group-element .no-footer-aside {
+  margin-bottom: 9px;
+}
+body {
+  position: relative;
+}
+aside {
+  position: relative;
+}
+.affix {
+  top: 10px;
+}
+.affix-top {
+  top: 0px;
+}
+.panel .aside-group-element {
+  margin-bottom: 0;
+  border: none;
+}
+.panel-body {
+  padding: 0;
+}
+.panel-heading {
+  padding: 0;
+  background-image: -webkit-linear-gradient(top, #0088cc 0%, #0066cc 100%);
+  background-image: -o-linear-gradient(top, #0088cc 0%, #0066cc 100%);
+  background-image: linear-gradient(to bottom, #0088cc 0%, #0066cc 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0066cc', GradientType=0);
+}
+.panel-heading a {
+  color: #fff;
+  display: block;
+  padding: 10px 15px;
+}
+.panel-heading a:hover {
+  color: #ccc;
+  text-shadow: 0 1px 0 #000;
+  text-decoration: none;
+}
+.chapterNav .level-0 {
+  text-transform: uppercase;
+}
+.chapterNav .level-1 {
+  border-top: 1px solid #ccc;
+  margin-top: 15px;
+  padding-top: 15px;
+  text-transform: uppercase;
+}
+.chapterNav .level-1:first-child {
+  margin-top: 0;
+}
+.chapterNav .level-2 {
+  padding-left: 10px;
+}
+.chapterNav .nav > li > a {
+  display: block;
+  padding: 2px 5px;
+  position: relative;
+}
+.chapterNav .nav > li.active > a {
+  border-bottom: 2px solid #A276CC;
+  border-left: 4px solid #A276CC;
+  color: #70266C;
+}
+.sort-group {
+  line-height: auto;
+  width: 100%;
+}
+.sort-group:before,
+.sort-group:after {
+  content: " ";
+  display: table;
+}
+.sort-group:after {
+  clear: both;
+}
+.sort-group a {
+  color: #555555;
+  display: block;
+  line-height: 100%;
+  text-decoration: none;
+  padding: 0 .5em;
+}
+.sort-group a:before,
+.sort-group a:after {
+  content: " ";
+  display: table;
+}
+.sort-group a:after {
+  clear: both;
+}
+.sort-group a :hover {
+  color: #e2003b;
+}
+.sort-group a.sort-up {
+  float: left;
+  margin-top: 0.35em;
+  vertical-align: middle;
+}
+.sort-group a.sort-down {
+  float: left;
+  vertical-align: middle;
+}
+.sort-group a.sort-active {
+  color: #e2003b;
+}
+.sort-group .sort-label {
+  display: block;
+  float: left;
+}
+.document-detail-wrapper {
+  padding: 9px;
+}
+.document-detail-wrapper section:before,
+.document-detail-wrapper section:after {
+  content: " ";
+  display: table;
+}
+.document-detail-wrapper section:after {
+  clear: both;
+}
+.document-detail-wrapper section h2 {
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 24px;
+  margin-bottom: 0;
+}
+.document-detail-wrapper section span[class*="label"] {
+  margin: 0 6px;
+}
+.document-detail-wrapper section span[class*="label"]:first-child {
+  margin-left: 0;
+}
+.document-detail-wrapper .file-fs span {
+  float: left;
+  display: block;
+}
+.document-detail-wrapper .file-fs span + span {
+  margin-left: 12px;
+}
+.document-detail-wrapper .file-cu span:not([class*="label"]) {
+  font-weight: bold;
+}
+.breadcrumb-internal {
+  margin-left: 0;
+  margin-right: 0;
+}
+.breadcrumb {
+  background-color: #ffffff;
+}
+.breadcrumb > li a {
+  color: #999999;
+}
+.breadcrumb > .active {
+  font-weight: bold;
+}

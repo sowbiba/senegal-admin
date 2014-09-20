@@ -1,6 +1,122 @@
 {% extends "::base.html.twig" %}
 
 {% block body %}
-    {% block content %}    
-    {% endblock content %}
+    <div id="colorPicker" class="user-color-picker"></div>
+    <!--<div id="modalProcessing" aria-hidden="true">
+        <i class="fa fa-spinner fa-2x fa-spin"></i>Chargement...
+    </div>-->
+    
+    {# Generic modal (used for example to add/edit documents) #}
+    {% block genericModal %}
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content"></div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+    {% endblock %}
+        
+    <div class="page-wrapper clearfix">
+        {% block header %}{% endblock %}
+        {% block nav %}
+            {% include 'SenegalLayoutBundle:Components:nav.html.twig' %}
+        {% endblock %}
+        <main class="row main">
+            {% block main %}
+                <div class="main-internal">
+                    {% block breadcrumbWrapper %}
+                        <div class="breadcrumb-internal row">
+                            {% spaceless %}
+                                {% block breadcrumb %}{% endblock %}
+                            {% endspaceless %}
+                        </div>
+                    {% endblock breadcrumbWrapper%}
+                    {% block subNavWrapper %}
+                        <div class="subNav-internal row">
+                            {% spaceless %}
+                                {% block subNav %}{% endblock %}
+                            {% endspaceless %}
+                        </div>
+                    {% endblock subNavWrapper%}
+                    <div class="content-wrapper row">
+                        {% block contentWrapper %}
+                            <section class="content col-{% block contentSize %}9{% endblock %}">
+                                {% spaceless %}
+                                    {% block h3 %}{% endblock %}
+                                    {% block flash %}
+                                        <div class="message-wrapper" id="message-wrapper">
+                                            {% for flashMessage in app.session.flashbag.get('success') %}
+                                                <div class="alert alert-success">
+                                                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                                    {% if flashMessage is iterable %}
+                                                        <ul>
+                                                            {% for message in flashMessage %}
+                                                                <li>{{ message }}</li>
+                                                            {% endfor %}
+                                                        </ul>
+                                                    {% else %}
+                                                        {{ flashMessage }}
+                                                    {% endif %}
+                                                </div>
+                                            {% endfor %}
+                                                
+                                            {% for flashMessage in app.session.flashbag.get('warning') %}
+                                            <div class="alert alert-warning">
+                                                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                                <h4>Avertissement non bloquant</h4>
+                                                {% if flashMessage is iterable %}
+                                                    <ul>
+                                                        {% for message in flashMessage %}
+                                                            <li>{{ message }}</li>
+                                                        {% endfor %}
+                                                    </ul>
+                                                {% else %}
+                                                    {{ flashMessage }}
+                                                {% endif %}
+                                            </div>
+                                            {% endfor %}
+
+                                            {% for flashMessage in app.session.flashbag.get('error') %}
+                                                <div class="alert alert-danger">
+                                                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                                    <h4>Erreurs</h4>
+                                                    {% if flashMessage is iterable %}
+                                                        <ul>
+                                                            {% for flashMessage in flashMessage %}
+                                                                <li>{{ flashMessage }}</li>
+                                                            {% endfor %}
+                                                        </ul>
+                                                    {% else %}
+                                                        {{ flashMessage }}
+                                                    {% endif %}
+                                                </div>
+                                            {% endfor %}
+                                        </div>
+                                    {% endblock %}                                
+                                    {% block content %}
+                                        
+                                    {% endblock %}
+                                {% endspaceless %}
+                            </section>
+                        {% endblock %}
+                            
+                    {% block sidebarWrapper %}
+                        <aside class="aside col-3">
+                            <div class="aside-internal">
+                                <div class="clearfix">
+                                    <a href="#" class="sidebar-toggler sidebar-shown clearfix tip-left" id="sidebar-toggler" data-original-title="Masquer la barre latérale"><i class="fa fa-angle-right fa-2x"></i></a>
+                                </div>
+                                {% spaceless %}
+                                    {% block sidebar %}{% endblock %}
+                                {% endspaceless %}
+                            </div>
+                        </aside>
+                    {% endblock sidebarWrapper%}
+                </div>
+            </div>
+        {% endblock main %}
+        </main>
+            
+        <a href="#top" id="top-link" class="tip" data-original-title="Haut de page"><i class="fa fa-angle-up fa-2x"></i></a>
+    </div><!-- / .page-wrapper -->
+    
 {% endblock body %}

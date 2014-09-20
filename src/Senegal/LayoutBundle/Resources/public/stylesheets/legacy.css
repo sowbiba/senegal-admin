@@ -1,0 +1,143 @@
+body {
+    background-color: #FFFFFF;
+    background-image: none;
+}
+
+ul{padding-left:0;}
+
+/* set some specific page wrapper to embed legacy correctly */
+#sf_admin_content,#sf_admin_content_edit, #sf_admin_edit_form,
+.a_connections_list #sf_admin_content, .a_sfGuardUser_list #sf_admin_content
+ {
+    padding: 0 20px 0 0;
+    height:100%;
+}
+
+
+#sf_admin_container {
+    background-color: #fff;
+    bottom: 0;
+    left: 0;
+    min-height: 600px;
+    overflow-y: visible;
+    overflow-x: visible;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+
+/* Fixing some UI element */
+.bubbleinfo-text{ display: none !important;}
+.m_contrats.a_contrats_data .popover{min-width:300px !important;max-width: none;}
+.m_contrats.a_contrats_data .popover-content span{ display: block; clear:both;}
+.m_contrats.a_contrats_data .popover-content .title{font-weight: bold;}
+
+.bubbleInfo abbr{
+    border-bottom: 1px dotted #111;
+    color: #111;
+    height: 14px;width:14px; text-align:center; margin-left:5px;
+    font-size: 10px;
+    font-weight: bold;
+    line-height: 1.4;
+    text-align: center;
+    text-shadow: 0 1px rgba( 0, 0, 0, 0.25 );
+    color: #fff;
+    background: #59ACF6;
+    background: -webkit-gradient( linear, left top, left bottom, from( #59ACF6 ), to( #1D55D1 ) );
+    background: -webkit-linear-gradient( top, #59ACF6, #1D55D1 );
+    background: -moz-linear-gradient( top, #59ACF6, #1D55D1 );
+    background: -ms-radial-gradie.nt( top, #59ACF6, #1D55D1 );
+    background: -o-linear-gradient( top, #59ACF6, #1D55D1 );
+    background: linear-gradient( top, #59ACF6, #1D55D1 );
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    border: none;
+    display: block;
+}
+
+/* Pagers */
+.legacy_pager{
+    float: right;
+}
+.legacy_pager a , .legacy_pager span {
+        margin-right:4px;
+}
+.legacy_pager span  {
+        background-color: rgba(255,255,255,0.3);
+        color: #000;
+        font-weight: normal;
+        padding: 0 2px;
+ }
+
+/* Hot fixing legacy embeded in schoko*/
+ #sf_admin_edit_form input[type="file"]{float:left;}
+ .sf_admin_actions input[type="button"], .sf_admin_actions input[type="submit"] { margin-left: 5px;}
+ *.sf_admin_actions li:last-child{padding-right:5px;}
+
+
+ /* Module  : bi_erports */
+ .m_bi_report .legacy_pager{ float:left;}
+ #sf_admin_container .form-row {margin: 0}
+
+ /* Module  : bi_erports */
+ .m_bi_report .legacy_pager{ float:left;}
+
+ /* Module invoiceRenewal/list */
+ .font-small{ font-size:10px;}
+
+
+/* Fullscreen feature on contract pages. Legacy Product Lines */
+ body.fullscreen{ padding:0; margin:0}
+
+.fullscreen .nav-wrapper,
+.fullscreen .breadcrumb-internal,
+.fullscreen .subNav-internal{ display:none; height: 0; margin: 0; padding: 0;}
+
+.fullscreen .page-wrapper{width:100%;}
+.fullscreen #sf_admin_container { width:100%;}
+.fullscreen #sf_admin_content { height:100%}
+
+.sidebar_toggler { display:none;}
+.fullscreen .sidebar_toggler { display:block;}
+
+/* DataEntryRules @path : /dataEntryRule/list/parentObject/5 */
+.td-der-actions{width:400px;}
+
+/* news edit page */
+/* tooltip conflict bootstrap Vs legacy */
+body.a_news_edit #sf_admin_content_edit .tip,
+body.a_news_save #sf_admin_content_edit .tip { opacity: 1; position: static; float: left;
+    margin-right: 5px;
+    cursor: help;
+}
+body.a_news_edit .ui-tooltip.ui-widget.ui-widget-content,
+body.a_news_save .ui-tooltip.ui-widget.ui-widget-content { max-width:480px !important;padding:10px; }
+
+
+/* FlagChamps */
+.desc-trees dl dt{ height:26px !important;}
+
+/*Contract Card*/
+#a_contractCardNodeTable_edit  td[class*="col-"], #a_contractCardNodeTable_edit  th[class*="col-"] { width:auto; }
+
+#import_mop{
+    cursor:pointer;
+}
+
+/* Page identity in Contracts/Revisions */
+.alert-inheritance-activated{margin-bottom: 0}
+.inheritance-bloc-liaison{ display:none;}
+
+
+.radio_aim_type {
+  margin: 0 !important;
+}
+.radio_aim_type_label {
+    padding-left: 5px !important;
+    margin-right: 30px;
+}
+div.aim_type_bloc {
+    display: inline !important;
+}

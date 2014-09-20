@@ -18,10 +18,10 @@ class SecurityController extends Controller
      * @param Request $request
      *
      * @Template("SenegalToolsBundle:Security:login.html.twig")
-     * @return array
      */
     public function loginAction(Request $request)
     {
+        var_dump("Yo");
         $session = $request->getSession();
         $error = $request->attributes->get(SecurityContext::AUTHENTICATION_ERROR, $session->get(SecurityContext::AUTHENTICATION_ERROR));
         
@@ -37,14 +37,14 @@ class SecurityController extends Controller
     
     public function loginCheckAction()
     {
-        var_dump("ICI");
-        $this->api = $this->get('SenegalApiService');
-        if(is_object($this->api)) {
-            error_log("API OK");
-        }
+        var_dump("ICI--0");
+        $this->api = $this->get('senegal.api.service');
+        error_log("API OK");
+            
         $resp = $this->api->get("/admin/login-check");
         echo(json_encode($resp));
-        return $resp;
+        var_dump($resp);
+        //return $resp;
         //return $this->redirect("http://senegal.dev/");
     }
 

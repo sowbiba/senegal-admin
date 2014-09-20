@@ -1,0 +1,46 @@
+/*
+
+    pfd-reset.less
+
+    Some Boostrap 3 defaut values we don't want so we have neither to repeat nor to change the BS Core files
+
+*/
+.table-bordered > thead > tr > th,
+.table-bordered > thead > tr > td {
+  border-bottom-width: 1px;
+}
+.form-control {
+  height: 28px;
+  padding: 4px 6px;
+}
+fieldset {
+  margin-top: 12px;
+}
+fieldset + fieldset {
+  margin-top: 25px;
+}
+.input-group-addon {
+  padding: 5px 8px;
+}
+.pagination {
+  border-radius: 3px;
+}
+.pagination > li:first-child > a,
+.pagination > li:first-child > span {
+  border-bottom-left-radius: 3px;
+  border-top-left-radius: 3px;
+}
+.pagination > li:last-child > a,
+.pagination > li:last-child > span {
+  border-bottom-right-radius: 3px;
+  border-top-right-radius: 3px;
+}
+.breadcrumb > li + li:before {
+  content: ">\00a0";
+}
+.breadcrumb > li a {
+  color: #999999;
+}
+.breadcrumb > .active {
+  color: #999999;
+}

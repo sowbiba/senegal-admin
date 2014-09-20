@@ -6,6 +6,6 @@ services:
 #        class: %senegal_user.example.class%
 #        arguments: [@service_id, "plain_value", %parameter%]
 
-   SenegalApiService:
-       class:        "%senegal_api.class%"
-       arguments:    ["%local_urls_api%"]
+#   senegal.api.service:
+#       class:        "%senegal_api.class%"
+#       arguments:    ["%local_urls_api%"]

@@ -1,0 +1,148 @@
+/*
+
+    Profideo V2
+
+    Error Pages
+*/
+.error-page {
+  overflow: hidden;
+  height: auto;
+  margin-top: 15px;
+  /*
+    V0 -> Keep Calm & Carry On :: Still in use in undefined errors
+  */
+  /* v2 */
+}
+.error-page .back-index {
+  margin-top: 30px;
+}
+.error-page main.main .main-internal {
+  background: none;
+}
+.error-page .error-illu-box {
+  background: #ed1847 url(/bundles/pfdlayout/img/profideo-404.jpg) 50% 25px no-repeat;
+  border: 2px solid #333;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  color: #fff;
+  margin: 0 auto;
+  padding: 50px;
+  padding-top: 75px;
+  text-align: center;
+  width: 550px;
+}
+.error-page .error-illu-box span {
+  display: block;
+  font-weight: bold;
+  padding: 10px 0;
+  text-align: center;
+  text-shadow: 1px 2px 2px #333;
+  text-transform: uppercase;
+}
+.error-page .error-illu-box span.err-keep {
+  font-size: 45px;
+}
+.error-page .error-illu-box span.err-and {
+  font-size: 45px;
+  text-transform: lowercase;
+}
+.error-page .error-illu-box span.err-go-back {
+  font-size: 25px;
+}
+.error-page .error-illu-box span.err-to-the {
+  font-size: 35px;
+  text-transform: lowercase;
+}
+.error-page .error-illu-box span.err-home {
+  font-size: 35px;
+}
+.error-page .error-illu-box span a {
+  color: #fff;
+}
+.error-page .error-illu-box span a:hover {
+  color: #333;
+  text-decoration: none;
+  text-shadow: 1px 2px 2px #fff;
+}
+.error-page .error-code-content {
+  margin: 0 auto;
+  padding: 50px;
+  padding-bottom: 0;
+  text-align: center;
+  width: 550px;
+}
+.error-page .error-code-content .code-text {
+  font-size: 55px;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-shadow: 0px 1px 0px #ed1847;
+}
+.error-page .logout-403 {
+  margin-top: 20px;
+  text-align: center;
+}
+.error-page .error-content {
+  background: #fff;
+  border-radius: 4px;
+  margin: 0 auto;
+  margin-top: 150px;
+  padding: 50px 10px ;
+  width: 1000px;
+}
+.error-page .error-content:before,
+.error-page .error-content:after {
+  content: " ";
+  display: table;
+}
+.error-page .error-content:after {
+  clear: both;
+}
+.error-page .error-content > div {
+  float: left;
+}
+.error-page .error-content h1 {
+  font-size: 26px;
+}
+.error-page .error-content h2 {
+  font-size: 16px;
+  font-weight: normal;
+}
+.error-page .error-img {
+  display: block;
+  height: 210px;
+  width: 160px;
+  background-position: 0 50%;
+  background-repeat: no-repeat;
+  background-color: transparent;
+}
+.error-page .error-img.error-404 {
+  background-image: url(/bundles/pfdlayout/img/badge-erreur-404-b.gif);
+}
+.error-page .error-img.error-403 {
+  background-image: url(/bundles/pfdlayout/img/badge-erreur-403-r.gif);
+}
+.error-page .error-img.error-500 {
+  background-image: url(/bundles/pfdlayout/img/badge-erreur-500-j.gif);
+}
+.error-page .error-txt {
+  background: #F1F1F1;
+  border: 1px solid #b4b2b2;
+  border-radius: 4px;
+  -webkit-box-shadow: 5px 5px 10px 0px #c0c0c0;
+  box-shadow: 5px 5px 10px 0px #c0c0c0;
+  padding: 20px 40px;
+  max-width: 800px;
+}
+.error-page ul {
+  margin-bottom: 25px;
+  margin-top: 15px;
+}
+.error-page ul li {
+  font-size: 16px;
+  margin-bottom: 1em;
+}
+.error-page p.links {
+  font-size: 16px;
+  padding-right: 25px;
+  text-align: right;
+}

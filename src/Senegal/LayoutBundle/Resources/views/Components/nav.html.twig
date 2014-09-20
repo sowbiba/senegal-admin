@@ -1,0 +1,121 @@
+<div class="row nav-wrapper">
+    <nav class="navbar navbar-default navbar-main" role="navigation">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Accueil</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Données</a>
+                        <ul class="dropdown-menu">
+                          <li><a href="#">Contrats</a></li>
+                          <li class="divider"></li>
+                          <li><a href="#">Fonds</a></li>
+                              <li class="divider"></li>
+                              <li><a href="#">Groupes de sociétés</a></li>
+                              <li><a href="#">Sociétés</a></li>
+                        </ul>
+                    </li>
+                        <li class="dropdown"><a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Index</a>
+                            <ul class="dropdown-menu">
+                                  <li><a href="#">Faux contrats</a></li>
+                                  <li><a href="#">Gammes</a></li>
+                                  <li><a href="#">Marchés</a></li>
+                                  <li><a href="#">Métiers</a></li>
+                                  <li><a href="#">Catégories MD (fond)</a></li>
+                                  <li><a href="#">Nature de documents</a></li>
+                                  <li><a href="#">Listes de valeur</a></li>
+                                  <li><a href="#">Pays</a></li>
+                                  <li><a href="#">Types de société</a></li>
+                                  <li><a href="#">Valeurs</a></li>
+                                  <li><a href="#">Zones de facturation</a></li>
+                                  <li><a href="#">Zones géographiques</a></li>
+                            </ul>
+                        </li>
+
+                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">News</a>
+                        <ul class="dropdown-menu">
+                          <li><a href="#">Gestion des lettres</a></li>
+                          <li><a href="#">News</a></li>
+                          {% if is_granted('ROLE_BACKOFFICE_NEWS_PARAMETRAGE') %}
+                              <li><a href="#">Types de news</a></li>
+                          {% endif %}
+                        </ul>
+                    </li>
+
+                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Magazine</a>
+                        <ul class="dropdown-menu">
+                                <li><a href="#">Panneau</a></li>
+                                <li><a href="#">En attente</a></li>
+                                <li><a href="#">Contrats non liés</a></li>
+                                <li><a href="#">Correspondants</a></li>
+                                    <li class="divider"></li>
+                                <li><a href="#">Export Magazine</a></li>
+                                <li><a href="#">Guides</a></li>
+                                <li><a href="#">QR Codes</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Utilisateurs</a>
+                        <ul class="dropdown-menu">
+                          <li><a href="#">Utilisateurs</a></li>
+                          <li><a href="#">Connexions</a></li>
+                              <li><a href="#">Facturation</a></li>
+                              <li><a href="#">Sociétés de rattachement</a></li>
+                              <li class="divider"></li>
+                              <li><a href="#">Password templates</a></li>
+                              <li><a href="#">sfGuard - Groups</a></li>
+                              <li><a href="#">sfGuard - Permissions</a></li>
+                        </ul>
+                    </li>
+
+
+                <li class="dropdown"><a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown">Outils</a>
+                    <ul class="dropdown-menu">
+                          <li><a href="#">Exports</a></li>
+                          <li><a href="#">Imports</a></li>
+                          <li class="divider"></li>
+                          <li><a href="#">Rapports BI</a></li>
+                          <li class="divider"></li>
+                          <li><a href="#">Fiches contrats</a></li>
+                          <li class="divider"></li>
+                          <li><a href="#">Campagnes publicitaires</a></li>
+                          <li class="divider"></li>
+                          <li><a href="#">Stats emailing</a></li>
+                          <li class="divider"></li>
+                          <li><a href="#">Enrichissement</a></li>
+                    </ul>
+                </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+              <a href="http://fr.gravatar.com/emails/" class="gravatar tip-left dropdown-toggle" data-hover="dropdown" data-toggle="dropdown" data-original-title="Compte Gravatar">
+                  <img src="{{ gravatar(app.user.email)|raw }}" />
+              </a>
+              <a href="#" class="dropdown-toggle username" data-hover="dropdown" data-toggle="dropdown">{{ app.user }}</a>
+                <ul class="dropdown-menu">
+                        <li><a href="#">Premium</a></li>
+                    {% if is_granted('ROLE_BASEFRONT_USER') %}
+                        <li><a href="#">Basefront</a></li>
+                    {% endif %}
+                    {% if is_granted('ROLE_DISTRIB_USER') %}
+                        <li><a href="#">Distrib</a></li>
+                    {% endif %}
+                    <li><a href="#">Corporate</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Mon profil</a></li>
+                    <li><a href="#">Déconnexion</a></li>
+                </ul>
+          </li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </nav>
+</div>

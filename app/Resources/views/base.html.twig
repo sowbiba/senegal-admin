@@ -7,7 +7,7 @@
         {% block headConfig %}{% include ':includes:headConf.html.twig' %}{% endblock%}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
-    <body>
+     <body{% block bodyClass %} class=""{% endblock %}{% block bodyId %} id=""{% endblock %} >
         {% block body %}{% endblock body %}
         {% block javascripts %}{% include ':includes:javascripts.html.twig' %}{% endblock javascripts %}
     </body>

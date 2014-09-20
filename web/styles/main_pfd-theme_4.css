@@ -1,0 +1,355 @@
+/*
+
+    Profideo V2
+
+    Theme
+*/
+.form-row {
+  margin: 12px 0 12px 0;
+}
+.form-row:first-child {
+  margin-left: 0;
+}
+.form-row:before,
+.form-row:after {
+  content: " ";
+  display: table;
+}
+.form-row:after {
+  clear: both;
+}
+.form-row-hidden {
+  display: none;
+}
+.btn + .btn {
+  margin-left: 9px;
+}
+.chapter-hidden {
+  display: none;
+}
+.chapter-hidden h1,
+.chapter-hidden h2,
+.chapter-hidden h3,
+.chapter-hidden h4,
+.chapter-hidden h5,
+.chapter-hidden h6 {
+  background: #666 !important;
+}
+.chapter-row-hidden {
+  display: none !important;
+}
+.chapter-col-hidden {
+  display: none !important;
+}
+.chapter-sidebar-hidden {
+  display: none !important;
+}
+.sansFontFamily {
+  font-family: "open_sansregular", Helvetica, Arial, sans-serif;
+}
+.serifFontFamily {
+  font-family: "gandhi_serifregular", "Times New Roman", Times, serif;
+}
+.monoFontFamily {
+  font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+}
+.fa-1-5x {
+  font-size: 1.5em;
+}
+.link i {
+  margin-right: 6px;
+}
+.link:hover {
+  text-decoration: none;
+}
+.link-delete,
+.link-invalid {
+  color: #da2819;
+}
+.link-delete:hover,
+.link-invalid:hover {
+  color: #ac2014;
+  text-decoration: none;
+}
+/*
+  Une couleur différente pour les URL déjà visitées #6312.
+  targeting here visited links within tables body in the main content that dont are not btn
+*/
+.content tbody a:not(.btn):visited {
+  color: #1f496e;
+}
+.fa-color-success {
+  color: #5cb85c;
+}
+.fa-color-warning {
+  color: #f0ad4e;
+}
+.fa-color-danger {
+  color: #d9534f;
+}
+.icon-yes:before {
+  color: #5cb85c;
+}
+.icon-no:before {
+  color: #d9534f;
+}
+.icon-red:before {
+  color: #d9534f;
+}
+.row-fluid .table,
+.row .table [class*="col"] {
+  min-height: 1.5;
+}
+/* Let's get a 100% min-height always */
+html,
+body {
+  height: 100%;
+}
+/* Page Wrapper - Make sure nothing flies around */
+.page-wrapper {
+  position: relative;
+  min-height: 100%;
+  width: 98%;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+/* Header - Main Page Header */
+header.main {
+  display: none;
+}
+header.main:before,
+header.main:after {
+  content: " ";
+  display: table;
+}
+header.main:after {
+  clear: both;
+}
+/* Main - Main Page Content Wrapper */
+main.main {
+  display: block;
+  margin-bottom: 18px;
+  min-height: 100%;
+}
+main.main:before,
+main.main:after {
+  content: " ";
+  display: table;
+}
+main.main:after {
+  clear: both;
+}
+main.main .main-internal {
+  background: #ffffff;
+  border-top-right-radius: 6px;
+  border-top-left-radius: 6px;
+}
+main.main .main-internal:before,
+main.main .main-internal:after {
+  content: " ";
+  display: table;
+}
+main.main .main-internal:after {
+  clear: both;
+}
+/* sub Nav */
+.subNav-internal {
+  margin-bottom: 24px;
+  margin-right: 0;
+  margin-left: 0;
+}
+.subNav-internal ul.nav {
+  padding-left: 2em;
+}
+/* bootstrap reset : Have the active subnav tab to display cursor as link */
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+  cursor: pointer;
+}
+/* Main sub-sections : Content + Sidebar */
+section.content {
+  position: relative;
+}
+.aside-internal:before,
+.aside-internal:after {
+  content: " ";
+  display: table;
+}
+.aside-internal:after {
+  clear: both;
+}
+.content-wrapper {
+  position: relative;
+  margin-left: 0;
+  margin-right: 0;
+}
+.content-wrapper:before,
+.content-wrapper:after {
+  content: " ";
+  display: table;
+}
+.content-wrapper:after {
+  clear: both;
+}
+/* Footer - Main Page Footer */
+footer.main {
+  bottom: 0;
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  border-top: 1px solid #e5e5e5;
+  color: #b2b2b2;
+  font-size: 9.6px;
+  margin-top: 18px;
+  min-height: 50px;
+  padding-top: 18px;
+  text-align: right;
+}
+footer.main:before,
+footer.main:after {
+  content: " ";
+  display: table;
+}
+footer.main:after {
+  clear: both;
+}
+.navbar-main {
+  font: "open_sansregular", Helvetica, Arial, sans-serif;
+  margin-top: 15px;
+  text-transform: uppercase;
+}
+.navbar-main .navbar-nav > li {
+  border-right: 1px solid #e7e7e7;
+  min-height: 50px;
+}
+.navbar-main .navbar-header {
+  background-color: #ffffff;
+  border-right: 1px solid #e7e7e7;
+}
+.navbar-main .navbar-brand {
+  background: url("/bundles/senegallayout/images/logo-header.png") 5px 50% no-repeat;
+  display: block;
+  min-height: 50px;
+  width: 241px;
+  text-indent: -999em;
+}
+.navbar-main .navbar-nav.navbar-right {
+  background-color: #ffffff;
+  border-left: 1px solid #e7e7e7;
+  min-height: 50px;
+}
+.navbar-main .navbar-nav.navbar-right > li {
+  border-right: none;
+}
+.navbar-main .navbar-nav.navbar-right > li:before,
+.navbar-main .navbar-nav.navbar-right > li:after {
+  content: " ";
+  display: table;
+}
+.navbar-main .navbar-nav.navbar-right > li:after {
+  clear: both;
+}
+.navbar-main .navbar-nav.navbar-right > li > a {
+  line-height: 50px;
+  padding: 0 15px 0 10px;
+  text-transform: none;
+  display: block;
+  float: left;
+}
+.navbar-main .navbar-nav.navbar-right > li > a img {
+  margin-right: 3px;
+}
+.navbar-main .navbar-nav.navbar-right > li > a.gravatar {
+  padding-right: 0;
+}
+.navbar-main .navbar-nav.navbar-right > .open > a {
+  background-color: #ffffff;
+  color: #e2003b;
+}
+.navbar-main .navbar-nav.navbar-right > .open > a:hover {
+  background-color: #ffffff;
+  color: #e2003b;
+}
+.navbar-main .navbar-nav.navbar-right > li > ul {
+  max-width: 160px;
+}
+.content-wrapper .col-3.aside {
+  padding-right: 0;
+}
+.list-no-bullet {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.list-no-bullet li {
+  margin-bottom: 11px;
+}
+.form-errors-list {
+  color: #a94442;
+  list-style-type: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+.form-errors-list + select,
+.form-errors-list + input,
+.form-errors-list + textarea {
+  border-color: #ebccd1;
+  color: #a94442;
+}
+h1.error,
+h2.error,
+h3.error,
+h4.error,
+h5.error,
+h6.error {
+  color: #d9534f;
+  margin-top: 0;
+}
+h1.error i,
+h2.error i,
+h3.error i,
+h4.error i,
+h5.error i,
+h6.error i {
+  margin-right: 12px;
+  color: #d9534f;
+}
+.user-color-picker {
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  width: 16px;
+  height: 16px;
+  background: url(/bundles/pfdlayout/img/color-wheel.png) 0 0 no-repeat;
+}
+.colpick {
+  z-index: 1001;
+}
+#modalProcessing {
+  border: 2px solid #bce8f1;
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 6px;
+  -webkit-box-shadow: 0px 5px 5px 0px #cccccc;
+  box-shadow: 0px 5px 5px 0px #cccccc;
+  background: #d9edf7;
+  color: #31708f;
+  display: none;
+  font-size: 18px;
+  font-weight: bold;
+  left: 50%;
+  padding: 10px 25px;
+  position: fixed;
+  width: 250px;
+  height: 80px;
+  text-align: center;
+  top: -5px;
+  margin-left: -250px;
+  z-index: 100000;
+}
+#modalProcessing i {
+  color: #31708f;
+}
+#modalProcessing i:before {
+  margin: 5px;
+}

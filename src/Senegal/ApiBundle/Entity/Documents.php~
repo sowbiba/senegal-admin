@@ -1,0 +1,98 @@
+<?php
+
+namespace Senegal\ApiBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Documents
+ *
+ * @ORM\Table(name="documents", uniqueConstraints={@ORM\UniqueConstraint(name="UNIQ_A2B07288697C1C6C", columns={"filepath"})}, indexes={@ORM\Index(name="IDX_A2B072887C92E5B4", columns={"documentsnature_id"})})
+ * @ORM\Entity
+ */
+class Documents
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="reference", type="string", length=255, nullable=false)
+     */
+    private $reference;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="filepath", type="string", length=255, nullable=false)
+     */
+    private $filepath;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="description", type="text", nullable=false)
+     */
+    private $description;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="size", type="integer", nullable=false)
+     */
+    private $size;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date_edition", type="datetime", nullable=false)
+     */
+    private $dateEdition;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="created_at", type="datetime", nullable=false)
+     */
+    private $createdAt;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="created_by", type="integer", nullable=false)
+     */
+    private $createdBy;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="updated_at", type="datetime", nullable=false)
+     */
+    private $updatedAt;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="updated_by", type="integer", nullable=false)
+     */
+    private $updatedBy;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var \Senegal\ApiBundle\Entity\Documentsnature
+     *
+     * @ORM\ManyToOne(targetEntity="Senegal\ApiBundle\Entity\Documentsnature")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="documentsnature_id", referencedColumnName="id")
+     * })
+     */
+    private $documentsnature;
+
+
+}

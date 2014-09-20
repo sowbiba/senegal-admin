@@ -19,9 +19,9 @@
       <tag name="kernel.event_listener" event="kernel.request"/>
     </service>
     
-    <service id="senegal.api.service"
+<!--    <service id="senegal.api.service"
              class="%senegal_api.class%">
       <argument>%local_urls_api%</argument>
-    </service>
+    </service>-->
   </services>
 </container>

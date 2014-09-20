@@ -1,3 +1,13 @@
 senegal_user_homepage:
-    path:     /admin/documents
-    defaults: { _controller: SenegalUserBundle:User:index }
+    path:     /admin/users
+    defaults: { _controller: SenegalUserBundle:User:users }
+senegal_user_edit:
+    path:     /admin/users/edit/{id}
+    defaults: { _controller: SenegalUserBundle:User:edit }
+    requirements:
+      id:  \d+
+senegal_user_delete:
+    path:     /admin/users/delete/{id}
+    defaults: { _controller: SenegalUserBundle:User:delete }
+    requirements:
+      id:  \d+

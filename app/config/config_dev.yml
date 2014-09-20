@@ -30,7 +30,15 @@ monolog:
         #    level:  info
 
 assetic:
-    use_controller: %use_assetic_controller%
+    use_controller: true
+    write_to : %kernel.root_dir%/../web/
+    filters:
+        cssrewrite: ~
+        lessphp:
+            file: %kernel.root_dir%/../vendor/oyejorge/less.php/lessc.inc.php
+            apply_to: "\.less$"
+            formatter: "classic" # classic|lessjs|compressed
+            preserve_comments: true
 
 #swiftmailer:
 #    delivery_address: me@example.com
