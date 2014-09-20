@@ -27,10 +27,11 @@ class UserController extends Controller
         
         if ('POST' == $request->getMethod()) {
             //$revisionForm->submit($request);
-            $postValues = $form->getData();var_dump($postValues);
+            $postValues = $form->getData();
             
             $api = $this->get('senegal.api.service');
-            $result = json_decode($api->post("/user/save/" . $id));var_dump($result);
+            $result = json_decode($api->post("/users/" .$id. "/save", $postValues));
+            var_dump($result);
         }
         
         return $this->render('SenegalUserBundle:User:edit.html.twig', 
@@ -52,5 +53,24 @@ class UserController extends Controller
         $api = $this->get('senegal.api.service');
         $users = json_decode($api->get("/all/users"));
         return $this->render('SenegalUserBundle:User:users.html.twig', array('users' => $users));
+    }
+    
+    private function convertUserToArray($user)
+    {
+        $userArray = array();
+
+        if(is_object($user)) {
+            $userArray["id"]        = isset($user->id) ? $user->id : null;
+            $userArray["username"]  = isset($user->username) ? $user->username : null;
+            $userArray["roles"]     = isset($user->roles) ? $user->roles : null;
+            $userArray["firstname"] = isset($user->firstname) ? $user->firstname : null;
+            $userArray["lastname"]  = isset($user->lastname) ? $user->lastname : null;
+            $userArray["email"]     = isset($user->email) ? $user->email : null;
+            $userArray["salt"]      = isset($user->salt) ? $user->salt : null;
+            $userArray["password"]  = isset($user->password) ? $user->password : null;
+            $userArray["active"]    = isset($user->active) ? $user->active : false;
+        }
+
+        return $userArray;
     }
 }

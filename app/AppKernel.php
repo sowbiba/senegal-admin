@@ -24,7 +24,7 @@ class AppKernel extends Kernel
             new Api\SdkBundle\ApiSdkBundle(),
             new Senegal\ToolsBundle\SenegalToolsBundle(),
             new Senegal\UserBundle\SenegalUserBundle(),
-            new Senegal\ApiBundle\SenegalApiBundle(),
+            //new Senegal\ApiBundle\SenegalApiBundle(),
             new Senegal\LayoutBundle\SenegalLayoutBundle(),
             new Senegal\AdminBundle\SenegalAdminBundle(),
         );

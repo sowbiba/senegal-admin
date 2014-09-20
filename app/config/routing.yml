@@ -8,8 +8,8 @@ senegal_layout:
 senegal_user:
     resource: "@SenegalUserBundle/Resources/config/routing.yml"
 
-senegal_api:
-    resource: "@SenegalApiBundle/Resources/config/routing.yml"
+#senegal_api:
+#    resource: "@SenegalApiBundle/Resources/config/routing.yml"
     
 senegal_tools:
     resource: "@SenegalToolsBundle/Resources/config/routing.yml"

@@ -81,19 +81,37 @@ class ApiHandler
         return $result;
     }
     
-    public function post($url, $data_string = "")
+    public function post($url, $data = array())
     {
-        curl_setopt($this->curl, CURLOPT_URL, $this->host . $url);
-        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-            'Content-Type: application/json',
-            'Content-Length: ' . strlen($data_string))
-        );
+        $data = json_encode($data);
+        var_dump($data);
 
-        $result = curl_errno($this->curl) ? false :curl_exec($this->curl);
+        $this->curl = curl_init($this->host . $url);
+        //curl_setopt($this->curl, CURLOPT_URL, $this->host . $url);
+        curl_setopt($this->curl, CURLOPT_CUSTOMREQUEST, "POST");                                                                     
+        curl_setopt($this->curl, CURLOPT_POSTFIELDS, $data);                                                                  
+        curl_setopt($this->curl, CURLOPT_RETURNTRANSFER, true);                                                                      
+        curl_setopt($this->curl, CURLOPT_HTTPHEADER, array(                                                                          
+            'Content-Type: application/json',                                                                                
+            'Content-Length: ' . strlen($data))                                                                       
+        );   
+//        curl_setopt($this->curl, CURLOPT_CUSTOMREQUEST, "POST");
+//        curl_setopt($this->curl, CURLOPT_POSTREDIR, 3);
+//        curl_setopt($this->curl,CURLOPT_HEADER, false);
+//        curl_setopt($this->curl, CURLOPT_POST, count($data));
+//        curl_setopt($this->curl, CURLOPT_POSTFIELDS, http_build_query($data));
+//        curl_setopt($this->curl, CURLOPT_RETURNTRANSFER, 1); // RETURN THE CONTENTS OF THE CALL
+//        curl_setopt($this->curl, CURLOPT_HTTPHEADER, array(
+//            "Accept: application/json",
+//            'Content-Type: application/json')
+//            //'Content-Length: ' . strlen($data))
+//        );
 
+        var_dump(curl_errno($this->curl));
+        $c = curl_exec($this->curl);
+        $result = curl_errno($this->curl) > 0 ? false :curl_exec($this->curl);
+        
+        curl_close($this->curl);
         return $result;
     }
 
